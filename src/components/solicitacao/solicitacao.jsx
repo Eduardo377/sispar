@@ -1,7 +1,7 @@
 import style from './solicitacao.module.scss';
 import Navbar from '../navbar/Navbar.jsx';
 
-export default function solicitacao() {
+export default function Solicitacao() {
     return (
         <div
             className={`${style.body}`}
