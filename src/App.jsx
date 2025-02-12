@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./components/login/Login";
-import Reembolsos from "./components/reembolsos/Reembolsos";
-import Solicitacao from './components/solicitacao/Solicitacao';
-import Analise from "./components/analise/Analise";
-import Historico from "./components/historico/Historico";
+import Login from "./components/login/Login.jsx";
+import Reembolsos from "./components/reembolsos/Reembolsos.jsx";
+import Solicitacao from './components/solicitacao/Solicitacao.jsx';
+import Analise from "./components/analise/Analise.jsx";
+import Historico from "./components/historico/Historico.jsx";
 import './global.scss';
 
 export default function App() {
