@@ -12,6 +12,9 @@ export default function Solicitacao() {
             >
 
                 <h1>Solitação</h1>
+                <p>
+                    para de me trollar git
+                </p>
             </main>
         </div>
     )
