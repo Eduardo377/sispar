@@ -1,7 +1,7 @@
-import style from './solicitacao.module.scss';
+import style from './analise.module.scss';
 import Navbar from '../navbar/Navbar.jsx';
 
-export default function solicitacao() {
+export default function Analise() {
     return (
         <div
             className={`${style.body}`}
@@ -11,8 +11,8 @@ export default function solicitacao() {
                 className={`${style.main}`}
             >
 
-                <h1>Solitação</h1>
+                <h1>Analise</h1>
             </main>
         </div>
-    )
+    );
 }

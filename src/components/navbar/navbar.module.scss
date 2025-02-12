@@ -1,0 +1,95 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--background);
+    
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 100%;
+        
+        .headerButton {
+            cursor: pointer;
+            background-color: var(--secondary-intense-blue);
+            width: 3vw;
+            height: 3vw;
+        
+            img {
+                width: 1VW;
+                height: 1VW;
+            }
+        }
+
+        picture {
+            text-align: center;
+
+            .avatarProfile {
+                height: auto;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 1rem;
+                color: var(--secondary-intense-blue);
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 30%;
+            
+            li {
+                display: flex;
+                gap: 1rem;
+                
+                p {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .hidden {
+                    visibility: hidden;
+                    opacity: 0;
+                    display: none;
+                }
+
+                .hidden:hover {
+                    visibility: visible;
+                    opacity: 1;
+                    display: block;
+                }
+            }
+        }
+
+        .logoutButton {
+            background-color: var(--secondary-medium-blue-gray);
+        }
+    }
+}
+
+header:hover {
+    width: 10vw;
+    border: var(--primary-light-blue-gray) 1px solid;
+    z-index: 1;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+}
+
+.hidden:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}

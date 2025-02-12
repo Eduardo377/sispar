@@ -1,14 +1,23 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/Tela-Login/logo-ws.png'
+import style from './login.module.scss'
 
 export default function Login() {
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        navigate('/reembolsos');
+    }
+
     return (
         <main>
-            <section id='background-navio'>
+            <section id={style['backgroundNavio']}>
             </section>
-            <section className="section-login">
+            <section className={style.sectionLogin}>
                 <article>
                     <img src={logo} alt="Logo da página" />
-                    <div id="container-titler">
+                    <div id={style['containerTitle']}>
                         <h1>
                             Boas vindas ao Novo Portal SISPAR
                         </h1>
@@ -17,35 +26,29 @@ export default function Login() {
                         </p>
                     </div>
                     <form action="#">
-                        <div>
-                            <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                placeholder="Email"
-                            />
-                        </div>
-                        <div>
-                            <input
-                                type="password"
-                                name="senha"
-                                id="senha"
-                                placeholder="Senha"
-                            />
-                        </div>
+                        <input
+                            type="email"
+                            name="email"
+                            id={style['email']}
+                            placeholder="Email"
+                            required
+                        />
+                        <input
+                            type="password"
+                            name="senha"
+                            id={style['senha']}
+                            placeholder="Senha"
+                            required
+                        />
                         <a href="#" rel="noopener noreferrer">
                             Esqueci minha senha
                         </a>
-                        <div id="button-container">
-                            <button id='entrar'>
-                                <a href="#" rel="noopener noreferrer">
-                                    Entrar
-                                </a>
+                        <div id={style["buttonContainer"]}>
+                            <button id={style['entrar']} onClick={handleLogin}>
+                                Entrar
                             </button>
-                            <button id='criar'>
-                                <a href="#" rel="noopener noreferrer">
-                                    Criar conta
-                                </a>
+                            <button id={style['criar']}>
+                                Criar conta
                             </button>
                         </div>
                     </form>

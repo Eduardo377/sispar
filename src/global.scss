@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+:root {
+    --primary-vibrant-turquoise-blue: #00BEDD;
+    --secondary-intense-blue: #0844C4;
+    --tertiary-dark-blue: #001A3D;
+    --primary-burgundy-red: #A60B2F;
+    --background: #F1F4F9;
+    --primary-light-blue-gray: #CBD4E1;
+    --secondary-medium-blue-gray: #63758D;
+    --tertiary-dark-gray: #23282F;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +27,18 @@ button {
 }
 
 input {
-    border: 0.05rem solid #CBD4E1;
+    border: 0.05rem solid var(--primary-light-blue-gray);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border: none;
+    box-shadow: 4px var(--secondary-medium-blue-gray) solid;
+    outline: none;
+}
+
+input:hover {
+    border: 0.05rem solid var(--tertiary-dark-gray);
 }
 
 input,
