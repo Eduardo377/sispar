@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/Tela-Login/logo-ws.png'
 import style from './login.module.scss'

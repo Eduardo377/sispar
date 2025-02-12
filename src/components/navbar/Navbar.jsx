@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./navbar.module.scss";
 import closeIcon from "../../assets/Header/imagem-fechar-header.png";
@@ -10,7 +10,7 @@ import histoticoIcon from "../../assets/Header/bottonHistórico.png";
 import sairIcon from "../../assets/Header/bottonSair.png";
 
 export default function Navbar() {
-    const [isExpanded, setIsExpanded] = useState(false);
+    // const [isExpanded, setIsExpanded] = useState(false);
     
     const navigate = useNavigate();
 
