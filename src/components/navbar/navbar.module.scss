@@ -19,11 +19,16 @@ header {
             background-color: var(--secondary-intense-blue);
             width: 3vw;
             height: 3vw;
+            border: none;
         
             img {
                 width: 1VW;
                 height: 1VW;
             }
+        }
+
+        .headerButton:hover {
+            background-color: var(--tertiary-dark-blue);
         }
 
         picture {
@@ -73,6 +78,10 @@ header {
         }
 
         .logoutButton {
+            background-color: var(--secondary-medium-blue-gray);
+        }
+        
+        .logoutButton:hover {
             background-color: var(--secondary-medium-blue-gray);
         }
     }
