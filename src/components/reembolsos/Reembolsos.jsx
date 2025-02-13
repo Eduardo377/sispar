@@ -31,65 +31,67 @@ export default function Reembolsos() {
                 </span>
                 <section>
                     <article>
-                        <h2>
-                            Sistema de Reembolsos
-                        </h2>
-                        <p>
-                            Solicite novos pedidos de reembolso, visualize solicitações em análise e todo o histórico.
-                        </p>
-                        <div className={`${style.boxButton}`}>
-                            <button onClick={handleSolicitacao}>
+                        <div className={`${style.infos}`}>
+                            <h4>
+                                Sistema de Reembolsos
+                            </h4>
+                            <p>
+                                Solicite novos pedidos de reembolso, visualize solicitações em análise e todo o histórico.
+                            </p>
+                        </div>
+                        <div className={`${style.boxCards}`}>
+                            <div className={`${style.card}`} onClick={handleSolicitacao}>
                                 <img src={solicitarReeembolso} alt="" />
                                 Solicitar Reembolso
-                            </button>
-                            <button>
+                            </div>
+                            <div className={`${style.card}`}>
                                 <img src={solicitarAnalise} alt="" />
                                 Verificar análises
-                            </button>
-                            <button>
+                            </div>
+                            <div className={`${style.card}`}>
                                 <img src={solicitarHistorico} alt="" />
                                 Histórico
-                            </button>
+                            </div>
                         </div>
-                        <div>
+                        <div className={`${style.boxInfos}`}>
                             <figure>
-                                <img src={`${NSolicitados}`} alt="" />
+                                <img src={`${NSolicitados}`} className={`${style.NSolicitadosImage}`} alt="" />
                                 <figcaption>
                                     <b>
                                         182
                                     </b>
-                                        Solicitados
+                                    Solicitados
                                 </figcaption>
                             </figure>
                             <figure>
-                                <img src={`${NAnalises}`} alt="" />
+                                <img src={`${NAnalises}`} className={`${style.NAnalisesImage}`}  alt="" />
                                 <figcaption>
                                     <b>
                                         74
                                     </b>
-                                        Em análise
+                                    Em análise
                                 </figcaption>
                             </figure>
                             <figure>
-                                <img src={`${NAprovados}`} alt="" />
+                                <img src={`${NAprovados}`} className={`${style.NAprovadosImage}`}  alt="" />
                                 <figcaption>
                                     <b>
                                         195
                                     </b>
-                                        Aprovados
+                                    Aprovados
                                 </figcaption>
                             </figure>
                             <figure>
-                                <img src={`${NRejeitados}`} alt="" />
+                                <img src={`${NRejeitados}`} className={`${style.NRejeitadosImage}`}  alt="" />
                                 <figcaption>
                                     <b>
                                         41
                                     </b>
-                                        Rejeitados
+                                    Rejeitados
                                 </figcaption>
                             </figure>
                         </div>
-                        <figure>
+                        <figure  className={`${style.boxFinal}`}  >
                             <img src={`${sistemaAtualizado}`} alt="" />
                             <figcaption>
                                 Sistema atualizado.
