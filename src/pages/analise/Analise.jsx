@@ -1,7 +1,7 @@
-import style from './historico.module.scss';
-import Navbar from '../navbar/Navbar.jsx';
+import style from './analise.module.scss';
+import Navbar from '../../components/navbar/Navbar.jsx';
 
-export default function Historico() {
+export default function Analise() {
     return (
         <div
             className={`${style.body}`}
@@ -11,7 +11,7 @@ export default function Historico() {
                 className={`${style.main}`}
             >
 
-                <h1>Historico</h1>
+                <h1>Analise</h1>
             </main>
         </div>
     );

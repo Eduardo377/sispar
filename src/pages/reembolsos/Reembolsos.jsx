@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../navbar/Navbar.jsx';
+import Navbar from '../../components/navbar/Navbar.jsx';
 import style from './reembolsos.module.scss';
 import vectorHomeIndice from '../../assets/Dashboard/vectorHomeIndice.png';
 import arrowRight from '../../assets/Dashboard/arrowRight.png';
@@ -56,42 +56,42 @@ export default function Reembolsos() {
                         <div className={`${style.boxInfos}`}>
                             <figure>
                                 <img src={`${NSolicitados}`} className={`${style.NSolicitadosImage}`} alt="" />
+                                <h4>
+                                    182
+                                </h4>
                                 <figcaption>
-                                    <b>
-                                        182
-                                    </b>
                                     Solicitados
                                 </figcaption>
                             </figure>
                             <figure>
-                                <img src={`${NAnalises}`} className={`${style.NAnalisesImage}`}  alt="" />
+                                <img src={`${NAnalises}`} className={`${style.NAnalisesImage}`} alt="" />
+                                <h4>
+                                    74
+                                </h4>
                                 <figcaption>
-                                    <b>
-                                        74
-                                    </b>
                                     Em análise
                                 </figcaption>
                             </figure>
                             <figure>
-                                <img src={`${NAprovados}`} className={`${style.NAprovadosImage}`}  alt="" />
+                                <img src={`${NAprovados}`} className={`${style.NAprovadosImage}`} alt="" />
+                                <h4>
+                                    195
+                                </h4>
                                 <figcaption>
-                                    <b>
-                                        195
-                                    </b>
                                     Aprovados
                                 </figcaption>
                             </figure>
                             <figure>
-                                <img src={`${NRejeitados}`} className={`${style.NRejeitadosImage}`}  alt="" />
+                                <img src={`${NRejeitados}`} className={`${style.NRejeitadosImage}`} alt="" />
+                                <h4>
+                                    41
+                                </h4>
                                 <figcaption>
-                                    <b>
-                                        41
-                                    </b>
                                     Rejeitados
                                 </figcaption>
                             </figure>
                         </div>
-                        <figure  className={`${style.boxFinal}`}  >
+                        <figure className={`${style.boxFinal}`}  >
                             <img src={`${sistemaAtualizado}`} alt="" />
                             <figcaption>
                                 Sistema atualizado.
