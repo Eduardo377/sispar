@@ -2,9 +2,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/login/Login.jsx";
 import Reembolsos from "./pages/reembolsos/Reembolsos.jsx";
-import Solicitacao from './pages/solicitacao/solicitacao.jsx';
+import Solicitacao from './pages/solicitacao/Solicitacao.jsx';
 import Analise from "./pages/analise/Analise.jsx";
-import Historico from "./pages/historico/historico.jsx";
+import Historico from "./pages/historico/Historico.jsx";
 import './global.scss';
 
 export default function App() {
