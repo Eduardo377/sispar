@@ -1,0 +1,35 @@
+.body {
+    display: flex;
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    padding-left: 6vw;
+    transition: padding-left 0.3s ease;
+
+    section {
+        span {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 2vh;
+            width: 100%;
+            margin-top: 2%;
+            margin-left: 1%;
+
+            img {
+                margin-right: 1%;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 1rem;
+                margin-right: 1%;
+            }
+        }
+    }
+}
