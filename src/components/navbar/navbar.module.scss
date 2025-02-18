@@ -1,106 +1,82 @@
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: var(--background);
     width: 6vw;
     height: 100vh;
-    
+    background-color: var(--background);
+    transition: width 0.3s ease;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+    &:hover {
+        width: 10vw;
+    }
+
     .navbar {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
         height: 100%;
-        
+        padding: 1rem;
+
         .headerButton {
             cursor: pointer;
             background-color: var(--secondary-intense-blue);
             width: 3vw;
             height: 3vw;
             border: none;
-        
-            img {
-                width: 1VW;
-                height: 1VW;
-            }
-        }
 
-        .headerButton:hover {
-            background-color: var(--tertiary-dark-blue);
+            img {
+                width: 1vw;
+                height: 1vw;
+            }
+
+            &:hover {
+                background-color: var(--tertiary-dark-blue);
+            }
         }
 
         picture {
-            text-align: center;
-
-            .avatarProfile {
-                height: auto;
-            }
-
-            h3 {
-                font-size: 1rem;
-            }
-
-            p {
-                font-size: 1rem;
-                color: var(--secondary-intense-blue);
+            h3, p {
+                visibility: hidden;
+                opacity: 0;
+                transition: opacity 0.3s ease;
             }
         }
 
         ul {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            height: 30%;
-            
+            gap: 1rem;
+
             li {
                 display: flex;
+                align-items: center;
                 gap: 1rem;
-                
-                p {
-                    display: flex;
-                    align-items: center;
-                }
 
-                .hidden {
+                p {
                     visibility: hidden;
                     opacity: 0;
-                    display: none;
-                }
-
-                .hidden:hover {
-                    visibility: visible;
-                    opacity: 1;
-                    display: block;
+                    transition: opacity 0.3s ease;
                 }
             }
         }
+    }
 
-        .logoutButton {
-            background-color: var(--secondary-medium-blue-gray);
-        }
-        
-        .logoutButton:hover {
-            background-color: var(--secondary-medium-blue-gray);
+    &:hover {
+        .navbar {
+            picture {
+                h3, p {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            ul li p {
+                visibility: visible;
+                opacity: 1;
+            }
         }
     }
-}
-
-header:hover {
-    width: 10vw;
-    border: var(--primary-light-blue-gray) 1px solid;
-    z-index: 1;
-}
-
-.hidden {
-    visibility: hidden;
-    opacity: 0;
-    display: none;
-}
-
-.hidden:hover {
-    visibility: visible;
-    opacity: 1;
-    display: block;
 }

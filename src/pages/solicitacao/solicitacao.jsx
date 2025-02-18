@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import style from './solicitacao.module.scss';
 import Navbar from '../../components/navbar/Navbar.jsx';
@@ -15,7 +15,7 @@ export default function Solicitacao() {
         //     const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$/;
         //     return regex.test(valor);
         // };
-        
+
         <div
             className={`${style.body}`}
         >
@@ -32,11 +32,48 @@ export default function Solicitacao() {
                     </span>
                     <form action={`#`} className={`${style.containerFrom}`}>
                         <div className={`${style.boxInfos}`}>
-                            <div>
-                                <label htmlFor="name">Nome Completo</label>
-                                <input type="text" name="naem" id="name" value={name} onChange={handleChangeName} />
+                            <div className={`${style.boxPrimeiraLinha}`}>
+                                <div className={`${style.boxInputName}`}>
+                                    <div>
+                                        <label htmlFor="name">Nome Completo</label>
+                                    </div>
+                                    <div>
+                                        <input type="text" name="name" id="name"
+                                        // value={name} onChange={handleChangeName} 
+                                        />
+                                    </div>
+                                </div>
+                                <div className={`${style.boxInputEmpresa}`}>
+                                    <div>
+                                        <label htmlFor="empresa">Empresa</label>
+                                    </div>
+                                    <div>
+                                        <input type="text" name="empresa" id="empresa"
+                                        // value={empresa} onChange={handleChangeName} 
+                                        />
+                                    </div>
+                                </div>
+                                <div className={`${style.boxInputNPrestContas}`}>
+                                    <div>
+                                        <label htmlFor="nPrestContas">Nº Prest. Contas</label>
+                                    </div>
+                                    <div>
+                                        <input type="text" name="nPrestContas" id="nPrestContas"
+                                        // value={empresa} onChange={handleChangeName} 
+                                        />
+                                    </div>
+                                </div>
                             </div>
-                            <div></div>
+                            <div className={`${style.boxTextArea}`}>
+                                <div>
+                                    <label htmlFor="story">Descrição / Motivo do Reembolso</label>
+                                </div>
+                                <div className={`${style.textAreaInput}`}>
+                                    <textarea className={`${style.textArea}`} type="text" name="story" id="story" rows={5} cols={33}
+                                    // value={empresa} onChange={handleChangeName} 
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </section>
