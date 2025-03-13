@@ -128,8 +128,7 @@ export default function Solicitacao() {
                                 </div>
                             </div>
                             <div className={`${style.values}`}>
-                                <div>
-
+                                <div className={`${style.boxValues}`}>
                                     <div>
                                         <div>
                                             <label htmlFor="ordInt.">Ord Int.</label>

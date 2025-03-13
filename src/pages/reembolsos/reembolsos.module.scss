@@ -45,21 +45,8 @@
             justify-content: center;
             align-items: center;
 
-            .infos {
-                display: flex;
-                flex-direction: column;
-                width: 80%;
-
-                h4 {
-                    font-weight: 700;
-                    font-size: 1.5rem;
-                }
-
-                p {
-                    font-weight: 400;
-                    font-size: 1rem;
-                    margin-top: 0.5rem;
-                }
+            .infoContainer {
+                border-right: 1px solid var(--primary-light-blue-gray);
             }
 
             div {
@@ -75,7 +62,7 @@
 
             .infoContainer {
                 margin-top: 3rem;
-                border: 1px solid var(--primary-light-blue-gray);
+                border-right: 1px solid var(--primary-light-blue-gray);
                 height: 10%;
                 width: 80%;
                 border-radius: 6px;
@@ -86,23 +73,27 @@
                     background-color: var(--primary-vibrant-turquoise-blue);
                     padding: 5% 4%;
                 }
-            
+
                 .NAnalisesImage {
                     border: #E56700 solid 1px;
                     background-color: #E56700;
                 }
-            
+
                 .NAprovadosImage {
                     border: #007A6A solid 1px;
                     background-color: #007A6A;
                     padding: 4% 5%;
                 }
-            
+
                 .NRejeitadosImage {
                     border: var(--primary-burgundy-red) solid 1px;
                     background-color: var(--primary-burgundy-red);
                     padding: 5%;
                 }
+            }
+
+            .infoContainer:hover {
+                box-shadow: 0.1px 0.1px 0.1px 1px rgba(0, 0, 0, 0.2);
             }
 
             .systemStatus {
