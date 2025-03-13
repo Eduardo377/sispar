@@ -65,88 +65,52 @@
             div {
                 display: flex;
                 justify-content: space-between;
-
             }
 
-            .boxCards {
+            .cardsContainer {
                 margin-top: 2rem;
                 height: 30%;
                 width: 80%;
-
-                .card {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    width: 30%;
-                    border-radius: 6px;
-                    border: 1px solid var(--primary-light-blue-gray);
-                    font-weight: 700;
-                    font-size: 1.3rem;
-
-                    img {
-                        width: 16%;
-                        margin-bottom: 1rem;
-                    }
-                }
-
             }
 
-            .boxInfos {
+            .infoContainer {
                 margin-top: 3rem;
                 border: 1px solid var(--primary-light-blue-gray);
                 height: 10%;
                 width: 80%;
                 border-radius: 6px;
 
-                figure {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    width: 25%;
 
-                    img {
-                        border-radius: 6px;
-                        padding: 0.4rem;
-                    }
-
-                    .NSolicitadosImage {
-                        border: var(--primary-vibrant-turquoise-blue) solid 1px;
-                        background-color: var(--primary-vibrant-turquoise-blue);
-                        padding: 5% 4%;
-                    }
-
-                    .NAnalisesImage {
-                        border: #E56700 solid 1px;
-                        background-color: #E56700;
-                    }
-
-                    .NAprovadosImage {
-                        border: #007A6A solid 1px;
-                        background-color: #007A6A;
-                        padding: 4% 5%;
-                    }
-
-                    .NRejeitadosImage {
-                        border: var(--primary-burgundy-red) solid 1px;
-                        background-color: var(--primary-burgundy-red);
-                        padding: 5%;
-                    }
-
-                    figcaption {
-                        width: 60%;
-
-                        b {
-                            margin-right: 3%;
-                        }
-                    }
+                .NSolicitadosImage {
+                    border: var(--primary-vibrant-turquoise-blue) solid 1px;
+                    background-color: var(--primary-vibrant-turquoise-blue);
+                    padding: 5% 4%;
+                }
+            
+                .NAnalisesImage {
+                    border: #E56700 solid 1px;
+                    background-color: #E56700;
+                }
+            
+                .NAprovadosImage {
+                    border: #007A6A solid 1px;
+                    background-color: #007A6A;
+                    padding: 4% 5%;
+                }
+            
+                .NRejeitadosImage {
+                    border: var(--primary-burgundy-red) solid 1px;
+                    background-color: var(--primary-burgundy-red);
+                    padding: 5%;
                 }
             }
 
-            .boxFinal {
+            .systemStatus {
                 width: 80%;
                 display: flex;
+                justify-content: flex-start;
                 margin-top: 3%;
+
 
                 img {
                     margin-right: 1%;
@@ -155,7 +119,7 @@
                 figcaption {
                     color: var(--secondary-intense-blue);
                     font-weight: 400;
-                    font-size: 1ren;
+                    font-size: 1rem;
                 }
             }
         }
