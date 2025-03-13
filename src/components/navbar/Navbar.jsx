@@ -1,7 +1,7 @@
 // import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./navbar.module.scss";
-import closeIcon from "../../assets/Header/imagem-fechar-header.png";
+import listNavIcon from "../../assets/Header/imagem-fechar-header.png";
 import avatarProfile from "../../assets/Header/avatarProfile.png";
 import homeIcon from "../../assets/Header/bottonHome.png";
 import reembolsoIcon from "../../assets/Header/bottonReembolso.png";
@@ -10,36 +10,24 @@ import histoticoIcon from "../../assets/Header/bottonHistórico.png";
 import sairIcon from "../../assets/Header/bottonSair.png";
 
 export default function Navbar() {
-    // const [isExpanded, setIsExpanded] = useState(false);
-    
+
     const navigate = useNavigate();
 
-    const handleLogout = () => {
-        navigate('/');
-    }
-
-    const handleReembolso = () => {
-        navigate('/reembolsos');
-    }
-
-    const handleAnalise = () => {
-        navigate('/analise');
-    }
-
-    const handleHistorico = () => {
-        navigate('/historico');
-    }
+    const navigateTo = (path) => {
+        navigate(path);
+    };
 
     return (
         <header>
             <nav className={`${style.navbar}`}>
                 <button
                     className={`${style.headerButton} ${style.openButton}`}
+                    aria-label="Navegar para home"
                 >
-                    <img src={closeIcon} alt="" loading="lazy" />
+                    <img src={listNavIcon} alt="Expande e fecha lista de icones" loading="lazy" />
                 </button>
                 <picture>
-                    <img src={avatarProfile} alt="" className={style.avatarProfile} loading="lazy" />
+                    <img src={avatarProfile} alt="Avatar do usuário" className={style.avatarProfile} loading="lazy" />
                     <h3 className={`${style.hidden}`}>
                         Dominick Silva
                     </h3>
@@ -51,8 +39,9 @@ export default function Navbar() {
                     <li>
                         <button
                             className={`${style.headerButton}`}
-                            >
-                            <img src={`${homeIcon}`} alt="" loading="lazy" />
+                            aria-label="Navegar para início"
+                        >
+                            <img src={`${homeIcon}`} alt="Ícone de início" loading="lazy" />
                         </button>
                         <p className={`${style.hidden}`} >
                             Inicio
@@ -61,9 +50,10 @@ export default function Navbar() {
                     <li>
                         <button
                             className={`${style.headerButton}`}
-                            onClick={handleReembolso}
-                            >
-                            <img src={`${reembolsoIcon}`} alt="" loading="lazy" />
+                            onClick={() => navigateTo('/reembolsos')}
+                            aria-label="Navegar para reembolsos"
+                        >
+                            <img src={`${reembolsoIcon}`} alt="Ícone de reembolso" loading="lazy" />
                         </button>
                         <p className={`${style.hidden}`} >
                             Reembolsos
@@ -72,9 +62,10 @@ export default function Navbar() {
                     <li>
                         <button
                             className={`${style.headerButton}`}
-                            onClick={handleAnalise}
+                            onClick={() => navigateTo('/analise')}
+                            aria-label="Navegar para análise"
                         >
-                            <img src={`${analiseIcon}`} alt="" loading="lazy" />
+                            <img src={`${analiseIcon}`} alt="Ícone de análise" loading="lazy" />
                         </button>
                         <p className={`${style.hidden}`} >
                             Análises
@@ -83,9 +74,10 @@ export default function Navbar() {
                     <li>
                         <button
                             className={`${style.headerButton}`}
-                            onClick={handleHistorico}
+                            onClick={() => navigateTo('/historico')}
+                            aria-label="Navegar para histórico"
                         >
-                            <img src={`${histoticoIcon}`} alt="" loading="lazy" />
+                            <img src={`${histoticoIcon}`} alt="Ícone de historico" loading="lazy" />
                         </button>
                         <p className={`${style.hidden}`} >
                             Histórico
@@ -94,9 +86,10 @@ export default function Navbar() {
                 </ul>
                 <button
                     className={`${style.logoutButton} ${style.headerButton}`}
-                    onClick={handleLogout}
+                    onClick={() => navigateTo('/')}
+                    aria-label="Encerrar sessão"
                 >
-                    <img src={`${sairIcon}`} alt="" loading="lazy" />
+                    <img src={`${sairIcon}`} alt="Ícone encerrar sessão" loading="lazy" />
                 </button>
             </nav>
         </header>
