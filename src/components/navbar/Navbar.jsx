@@ -1,97 +1,78 @@
-// import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import style from "./navbar.module.scss";
 import listNavIcon from "../../assets/Header/imagem-fechar-header.png";
 import avatarProfile from "../../assets/Header/avatarProfile.png";
 import homeIcon from "../../assets/Header/bottonHome.png";
 import reembolsoIcon from "../../assets/Header/bottonReembolso.png";
 import analiseIcon from "../../assets/Header/bottonAnalise.png";
-import histoticoIcon from "../../assets/Header/bottonHistórico.png";
+import historicoIcon from "../../assets/Header/bottonHistórico.png";
 import sairIcon from "../../assets/Header/bottonSair.png";
 
+const menuItems = [
+    { path: "#", icon: homeIcon, label: "Início" },
+    { path: "/reembolsos", icon: reembolsoIcon, label: "Reembolsos" },
+    { path: "/analise", icon: analiseIcon, label: "Análises" },
+    { path: "/historico", icon: historicoIcon, label: "Histórico" },
+];
+
 export default function Navbar() {
-
+    const [isExpanded, setIsExpanded] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
 
-    const navigateTo = (path) => {
-        navigate(path);
+    const toggleNavbar = () => setIsExpanded(!isExpanded);
+    const navigateTo = (path) => navigate(path);
+
+    const handleLogout = () => {
+        if (window.confirm("Tem certeza que deseja sair?")) {
+            navigate("/");
+        }
     };
 
     return (
-        <header>
-            <nav className={`${style.navbar}`}>
+        <header className={isExpanded ? style.expanded : style.collapsed}>
+            <nav className={style.navbar}>
                 <button
-                    className={`${style.headerButton} ${style.openButton}`}
-                    aria-label="Navegar para home"
+                    className={style.headerButton}
+                    onClick={toggleNavbar}
+                    aria-label={isExpanded ? "Recolher menu" : "Expandir menu"}
                 >
-                    <img src={listNavIcon} alt="Expande e fecha lista de icones" loading="lazy" />
+                    <img src={listNavIcon} alt="Ícone de menu" loading="lazy" />
                 </button>
-                <picture>
-                    <img src={avatarProfile} alt="Avatar do usuário" className={style.avatarProfile} loading="lazy" />
-                    <h3 className={`${style.hidden}`}>
-                        Dominick Silva
-                    </h3>
-                    <p className={`${style.hidden}`}>
-                        Comércio Exterior
-                    </p>
-                </picture>
-                <ul>
-                    <li>
-                        <button
-                            className={`${style.headerButton}`}
-                            aria-label="Navegar para início"
-                        >
-                            <img src={`${homeIcon}`} alt="Ícone de início" loading="lazy" />
-                        </button>
-                        <p className={`${style.hidden}`} >
-                            Inicio
-                        </p>
-                    </li>
-                    <li>
-                        <button
-                            className={`${style.headerButton}`}
-                            onClick={() => navigateTo('/reembolsos')}
-                            aria-label="Navegar para reembolsos"
-                        >
-                            <img src={`${reembolsoIcon}`} alt="Ícone de reembolso" loading="lazy" />
-                        </button>
-                        <p className={`${style.hidden}`} >
-                            Reembolsos
-                        </p>
-                    </li>
-                    <li>
-                        <button
-                            className={`${style.headerButton}`}
-                            onClick={() => navigateTo('/analise')}
-                            aria-label="Navegar para análise"
-                        >
-                            <img src={`${analiseIcon}`} alt="Ícone de análise" loading="lazy" />
-                        </button>
-                        <p className={`${style.hidden}`} >
-                            Análises
-                        </p>
-                    </li>
-                    <li>
-                        <button
-                            className={`${style.headerButton}`}
-                            onClick={() => navigateTo('/historico')}
-                            aria-label="Navegar para histórico"
-                        >
-                            <img src={`${histoticoIcon}`} alt="Ícone de historico" loading="lazy" />
-                        </button>
-                        <p className={`${style.hidden}`} >
-                            Histórico
-                        </p>
-                    </li>
-                </ul>
+
+                <div className={style.container}>
+                    <picture>
+                        <img src={avatarProfile} alt="Avatar do usuário" className={style.avatarProfile} loading="lazy" />
+                        <h3 className={isExpanded ? style.visible : style.hidden}>Dominick Silva</h3>
+                        <p className={isExpanded ? style.visible : style.hidden}>Comércio Exterior</p>
+                    </picture>
+
+                    <ul>
+                        {menuItems.map(({ path, icon, label }) => (
+                            <li key={path}>
+                                <button
+                                    className={style.headerButton}
+                                    onClick={() => navigateTo(path)}
+                                    aria-label={`Navegar para ${label}`}
+                                    aria-current={location.pathname === path ? "page" : undefined}
+                                >
+                                    <img src={icon} alt={`Ícone de ${label}`} loading="lazy" />
+                                </button>
+                                <p className={isExpanded ? style.visible : style.hidden}>{label}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
                 <button
-                    className={`${style.logoutButton} ${style.headerButton}`}
-                    onClick={() => navigateTo('/')}
+                    className={`${style.logoutButton}`}
+                    onClick={handleLogout}
                     aria-label="Encerrar sessão"
                 >
-                    <img src={`${sairIcon}`} alt="Ícone encerrar sessão" loading="lazy" />
+                    <img src={sairIcon} alt="Ícone de sair" loading="lazy" />
                 </button>
             </nav>
         </header>
-    )
+    );
 }
