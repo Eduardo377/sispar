@@ -3,12 +3,36 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/Tela-Login/logo-ws.png'
 import style from './login.module.scss'
 
+import Forms from '../../components/login/forms/Forms.jsx';
+
 export default function Login() {
     const navigate = useNavigate();
 
-    const handleLogin = () => {
+    const validateEmail = (email) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    };
+
+    const handleLogin = (e) => {
+        const email = e.target.email.value;
+        const senha = e.target.senha.value;
+
+        if (!validateEmail(email)) {
+            alert('Por favor, insira um email válido.');
+            return;
+        }
+
+        if (!senha && senha.length < 6) {
+            alert('Preencha todos os campos.');
+            return;
+        }
+
         navigate('/reembolsos');
-    }
+    };
+
+    const handleCriarConta = () => {
+        navigate('/criar-conta');
+    };
 
     return (
         <main>
@@ -16,7 +40,7 @@ export default function Login() {
             </section>
             <section className={style.sectionLogin}>
                 <article>
-                    <img src={logo} alt="Logo da página" />
+                <img src={logo} alt="Logo do Sistema SISPAR" />
                     <div id={style['containerTitle']}>
                         <h1>
                             Boas vindas ao Novo Portal SISPAR
@@ -25,33 +49,7 @@ export default function Login() {
                             Sistema de Emissão de Boletos e Parcelamento
                         </p>
                     </div>
-                    <form action="#">
-                        <input
-                            type="email"
-                            name="email"
-                            id={style['email']}
-                            placeholder="Email"
-                            required
-                        />
-                        <input
-                            type="password"
-                            name="senha"
-                            id={style['senha']}
-                            placeholder="Senha"
-                            required
-                        />
-                        <a href="#" rel="noopener noreferrer">
-                            Esqueci minha senha
-                        </a>
-                        <div id={style["buttonContainer"]}>
-                            <button id={style['entrar']} onClick={handleLogin}>
-                                Entrar
-                            </button>
-                            <button id={style['criar']}>
-                                Criar conta
-                            </button>
-                        </div>
-                    </form>
+                    <Forms />
                 </article>
             </section>
         </main>

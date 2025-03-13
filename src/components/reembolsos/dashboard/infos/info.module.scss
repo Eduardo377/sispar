@@ -1,0 +1,16 @@
+
+figure {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 25%;
+
+    img {
+        border-radius: 6px;
+        padding: 0.4rem;
+    }
+
+    figcaption {
+        width: 60%;
+    }
+}

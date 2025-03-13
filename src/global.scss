@@ -15,7 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", serif;
+    font-family: "Inter", sans-serif;
 }
 
 a {
@@ -26,7 +26,7 @@ button {
     cursor: pointer;
 }
 
-input, textarea {
+input, textarea, select {
     border: 0.05rem solid var(--primary-light-blue-gray);
     transition: border-color 0.3s, box-shadow 0.3s;
 }
@@ -51,8 +51,20 @@ textarea:hover {
     border: 0.05rem solid var(--tertiary-dark-gray);
 }
 
+select:focus {
+    border: none;
+    box-shadow: 0px 0px 8px 1px var(--tertiary-dark-blue);
+    outline: none;
+}
+
+select:hover {
+    border: 0.05rem solid var(--tertiary-dark-gray);
+}
+
 input,
 textarea,
-button {
+button,
+select {
     border-radius: 0.375rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
