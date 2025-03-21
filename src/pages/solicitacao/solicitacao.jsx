@@ -2,6 +2,7 @@ import Navbar from '../../components/navbar/Navbar.jsx';
 import BoxInfos from '../../components/solicitacoes/boxInfos/BoxInfos.jsx';
 import BoxDate from '../../components/solicitacoes/boxDate/BoxDate.jsx';
 import Values from '../../components/solicitacoes/values/Values.jsx';
+import Table from '../../components/solicitacoes/table/Table.jsx';
 
 import vectorHomeIndice from '../../assets/Dashboard/vectorHomeIndice.png';
 import arrowRight from '../../assets/Dashboard/arrowRight.png';
@@ -30,6 +31,7 @@ export default function Solicitacao() {
                             <Values />
                         </article>
                     </form>
+                    <Table />
                 </section>
             </main>
         </div>
