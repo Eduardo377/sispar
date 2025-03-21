@@ -1,0 +1,56 @@
+.boxValues {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 1%;
+    width: 97%;
+    
+    .boxWidthMin,
+    .boxWidthMax {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    
+    .boxWidthMin {
+        width: 6%;
+
+        input {
+            width: 100%;
+        }
+    }
+
+    .boxWidthMax {
+        width: 11%;
+
+        input {
+            width: 100%;
+        }
+    }
+    
+    .boxButton {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 16%;
+
+        .buttonSalvar {
+            background-color: var(--tertiary-dark-blue);
+            color: var(--background);
+            width: 6vw;
+        }
+
+        .buttonCancelar {
+            background-color: var(--primary-vibrant-turquoise-blue);
+            width: 2.5vw;
+        }
+
+        .buttonSalvar,
+        .buttonCancelar {
+            height: 4.7vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
