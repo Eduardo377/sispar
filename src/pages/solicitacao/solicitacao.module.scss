@@ -1,6 +1,5 @@
 .main {
     height: 100vh;
-    width: 100%;
     background-color: var(--background);
     padding-left: 6vw;
 
@@ -9,23 +8,20 @@
         font-size: 16px;
     }
 
-    input,
-    textarea {
-        margin-top: 2%;
-        border-top: none;
-        border-bottom: none;
-    }
-
     section {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        max-width: 100% !important;
+
         span {
             display: flex;
-            justify-content: flex-start;
             align-items: center;
             height: 2vh;
-            width: 100%;
             margin-top: 2%;
             margin-left: 1%;
             margin-bottom: 2%;
+
 
             img {
                 margin-right: 1%;
@@ -39,135 +35,19 @@
         }
 
         .containerFrom {
-            width: 100%;
             margin-left: 1%;
             display: flex;
-            justify-content: space-between;
             flex-direction: row !important;
-            align-items: flex-start;
-
-            .boxInfos {
-                width: 40%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: flex-start;
-                border-right: var(--primary-light-blue-gray) solid 1px;
-                height: 10vw;
-
-
-
-                .boxPrimeiraLinha {
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-
-
-                    .boxInputName {
-                        width: 50%;
-                        display: flex;
-                        flex-direction: column;
-
-                        input {
-                            width: 90%;
-                        }
-
-                        label {
-                            margin-bottom: 10%;
-                        }
-
-                        display: flex;
-                        flex-direction: column;
-                    }
-                }
-
-                .boxInputEmpresa {
-                    display: flex;
-                    flex-direction: column;
-
-                    input {
-                        width: 80%;
-                    }
-                }
-
-                .boxInputNPrestContas {
-                    display: flex;
-                    flex-direction: column;
-
-                    input {
-                        width: 80%;
-                    }
-                }
-
-                .boxTextArea {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    align-items: flex-start;
-
-                    .textAreaInput {
-                        .textArea {
-
-                            width: 95%;
-                            padding: 10px;
-                            border: 1px solid var(--primary-light-blue-gray);
-                            border-radius: 0.375rem;
-                            font-family: "Inter", serif;
-                            font-size: 1rem;
-                            resize: vertical;
-                        }
-                    }
-                }
-            }
+            justify-content: space-between;
+            height: auto;
+            max-width: 100%;
 
             .containerRegistro {
-                width: 59%;
+                width: 63%;
+                height: auto;
                 display: flex;
-                justify-content: space-between;
                 flex-direction: column;
-
-                .boxDate {
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-
-                    .boxDateInfos {
-                        div {
-                            input {
-                                height: 5dvh;
-                                width: 100%;
-                            }
-                        }
-                    }
-
-                    .boxDespesa {
-                        div {
-                            #dispesa {
-                                height: 4%;
-                            }
-                        }
-                    }
-
-                    .boxCustos {
-                        div {
-                            #custos {
-                                height: 4dvh;
-                            }
-                        }
-                    }
-                }
-
-                .values {
-                    .boxValues {
-                        display: flex;
-                        div {
-                            input {
-                                width: 60%;
-                            }
-                        }
-                    }
-                }
+                justify-content: space-between;
             }
         }
     }
