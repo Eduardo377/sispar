@@ -53,7 +53,7 @@ export default function Forms() {
                 Esqueci minha senha
             </a>
             <div id={style["buttonContainer"]}>
-                <button id={style['entrar']} onClick={handleLogin}>
+                <button type='button' id={style['entrar']} onClick={handleLogin}>
                     Entrar
                 </button>
                 <button
