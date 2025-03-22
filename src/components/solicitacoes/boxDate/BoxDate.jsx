@@ -4,14 +4,14 @@ export default function BoxDate() {
     return (
         <div className={`${style.boxDate}`}>
             <div className={`${style.boxDateInfos}`}>
-                <div>
+                <div className={`${style.box}`}>
                     <label htmlFor="date">Data</label>
-                    <input type="date" name="date" className={`${style.date}`} value="AAAA-MM-DD" min="1900-01-01" max="2300-12-31"
+                    <input type="date" name="date" id={`${style.date}`} value="AAAA-MM-DD" min="1900-01-01" max="2300-12-31"
                     />
                 </div>
             </div>
             <div className={`${style.boxDespesa}`}>
-                <div>
+                <div className={`${style.box}`}>
                     <label htmlFor="dispesa">Tipo de Despesa</label>
                     <select
                         htmlFor="despesa"
@@ -38,7 +38,7 @@ export default function BoxDate() {
                 </div>
             </div>
             <div className={`${style.boxCustos}`}>
-                <div>
+                <div className={`${style.box}`}>
                     <label htmlFor="custos">Controle de Custo</label>
                     <select
                         htmlFor="custos"

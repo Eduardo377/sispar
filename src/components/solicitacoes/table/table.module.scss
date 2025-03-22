@@ -3,25 +3,25 @@ table {
     overflow-x: auto;
     margin-left: 1%;
     margin-top: 2%;
-    border-radius: 0.375rem;
     text-align: center;
     font-weight: 200;
     font-size: 1rem;
     border-collapse: collapse;
     font-size: 1rem;
-
+    border-radius: 0.375rem;
+    
     tr {
-
+        
         th {
             font-weight: 300;
         }
-
+        
         th,
         td {
             border: 0.01rem solid var(--primary-light-blue-gray);
             padding: 0.3rem;
         }
-
+        
         td:nth-child(2) {
             max-width: 9px;
             white-space: nowrap;

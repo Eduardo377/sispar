@@ -1,40 +1,36 @@
 .boxDate {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 1%;
     height: auto;
     width: 97%;
 
-    div {
+    .boxDateInfos {
+        width: 2%;
+
+        input[type="date"] {
+            text-transform: uppercase;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            background: transparent;
+        }
+    }
+
+    .boxDespesa {
+        width: 20%;
+    }
+
+    .boxCustos {
+        width: 45%;
+    }
+
+    .box {
         display: flex;
         flex-direction: column;
-        margin-right: 9%;
 
-        .boxDateInfos {
-            width: 140%;
-        }
-        
-        .boxDespesa {
-            width: 100%;
-        }
-        
-        
-        .boxCustos {
-            width: 100%;
-        }
-        
-        .date {
-            width: 160%;
+        .date, .despesa, .custos {
             height: 5dvh;
-        }
-
-        .despesa {
-            width: 150%;
-            height: 5dvh;
-        }
-
-        .custos {
-            height: 5dvh;
-            width: 171%;
         }
     }
 }
