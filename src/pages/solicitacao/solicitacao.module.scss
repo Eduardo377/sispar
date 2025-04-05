@@ -50,5 +50,19 @@
                 justify-content: space-between;
             }
         }
+        .boxFinalAnalysis {
+            display: flex;
+            justify-content: flex-end;
+            width: 97.4%;
+            height: auto;
+            gap: 1%;
+
+            div {
+                display: flex;
+                flex-direction: column;
+
+                
+            }
+        }
     }
 }

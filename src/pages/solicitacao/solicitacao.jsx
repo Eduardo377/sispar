@@ -32,6 +32,18 @@ export default function Solicitacao() {
                         </article>
                     </form>
                     <Table />
+                    <article className={`${style.boxFinalAnalysis}`}>
+                        <div>
+                            <label htmlFor="name">Total Faturado</label>
+                            <input id="number" type="number" placeholder='0.00' />
+                        </div>
+                        <div>
+                            <label htmlFor="empresa">Total Despesa</label>
+                            <input id="number" type="number" placeholder='0.00' />
+                        </div>
+                        <button>Enviar para Análise</button>
+                        <button>Cancelar Solicitação</button>
+                    </article>
                 </section>
             </main>
         </div>
