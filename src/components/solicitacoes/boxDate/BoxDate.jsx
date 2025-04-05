@@ -6,7 +6,7 @@ export default function BoxDate() {
             <div className={`${style.boxDateInfos}`}>
                 <div className={`${style.box}`}>
                     <label htmlFor="date">Data</label>
-                    <input type="date" name="date" id={`${style.date}`} value="AAAA-MM-DD" min="1900-01-01" max="2300-12-31"
+                    <input type="date" name="date" className={`${style.date}`} value="AAAA-MM-DD" min="1900-01-01" max="2300-12-31"
                     />
                 </div>
             </div>

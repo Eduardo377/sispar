@@ -44,13 +44,13 @@ header {
     .headerButton {
         cursor: pointer;
         background-color: var(--secondary-intense-blue);
-        width: 3vw;
-        height: 3vw;
+        width: 2.5vw;
+        height: 2.5vw;
         border: none;
 
         img {
-            width: 1vw;
-            height: 1vw;
+            width: 0.9vw;
+            height: 0.9vw;
         }
 
         &:hover {
@@ -80,7 +80,7 @@ header {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 70%;
+            height: 60%;
             list-style: none;
 
             li {
@@ -98,13 +98,13 @@ header {
     .logoutButton {
         background-color: var(--secondary-medium-blue-gray);
         cursor: pointer;
-        width: 3vw;
-        height: 3vw;
+        width: 2.5vw;
+        height: 2.5vw;
         border: none;
 
         img {
-            width: 1vw;
-            height: 1vw;
+            width: 0.9vw;
+            height: 0.9vw;
         }
     }
 }
