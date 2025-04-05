@@ -6,6 +6,8 @@ import Table from '../../components/solicitacoes/table/table.jsx';
 
 import vectorHomeIndice from '../../assets/Dashboard/vectorHomeIndice.png';
 import arrowRight from '../../assets/Dashboard/arrowRight.png';
+import checkIcon from '../../assets/solicitacao/checkVector.png';
+import deleteIcon from '../../assets/solicitacao/deleteVector.png';
 
 import style from './solicitacao.module.scss';
 
@@ -41,8 +43,14 @@ export default function Solicitacao() {
                             <label htmlFor="empresa">Total Despesa</label>
                             <input id="number" type="number" placeholder='0.00' />
                         </div>
-                        <button>Enviar para Análise</button>
-                        <button>Cancelar Solicitação</button>
+                        <button className={`${style.blueAnalise}`}>
+                            <img src={checkIcon} alt="Delete" />
+                            Enviar para Análise
+                        </button>
+                        <button className={`${style.redDelete}`}>
+                            <img src={deleteIcon} alt="Delete" />
+                            Cancelar Solicitação
+                        </button>
                     </article>
                 </section>
             </main>
