@@ -15,7 +15,7 @@ export default function BoxInfos() {
                 </div>
                 <div className={`${style.boxInputNPrestContas}`}>
                     <label htmlFor="nPrestContas">Nº Prest. Contas</label>
-                    <input type="text" name="nPrestContas" id="nPrestContas" />
+                    <input type="number" name="nPrestContas" id="nPrestContas" />
                 </div>
             </div>
             <div className={`${style.boxTextArea}`}>

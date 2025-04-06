@@ -6,36 +6,36 @@ export default function Values() {
     return (
         <article className={`${style.boxValues}`}>
             <div className={`${style.boxWidthMin}`}>
-                <label htmlFor="ordInt.">Ord Int.</label>
-                <input type="text" />
+                <label htmlFor="ordInt">Ord Int.</label>
+                <input id="ordInt" type="number" />
             </div>
             <div className={`${style.boxWidthMin}`}>
-                <label htmlFor="ordInt.">Div.</label>
-                <input type="text" />
+                <label htmlFor="pep">PEP</label>
+                <input id="pep" type="number" />
             </div>
             <div className={`${style.boxWidthMin}`}>
-                <label htmlFor="ordInt.">PEP</label>
-                <input type="text" />
+                <label htmlFor="div">Div.</label>
+                <input id="div" type="number" />
             </div>
             <div className={`${style.boxWidthMax}`}>
-                <label htmlFor="ordInt.">Dist. /Km</label>
-                <input type="text" />
+                <label htmlFor="distancia">Dist. /Km</label>
+                <input id="distancia" type="number" />
             </div>
             <div className={`${style.boxWidthMin}`}>
-                <label htmlFor="ordInt.">Moeda</label>
-                <input type="text" />
+                <label htmlFor="moeda">Moeda</label>
+                <input id="moeda" type="text" />
             </div>
             <div className={`${style.boxWidthMax}`}>
-                <label htmlFor="ordInt.">Valor / Km</label>
-                <input type="text" />
+                <label htmlFor="valorKM">Valor / Km</label>
+                <input id="valorKM" type="text" />
             </div>
             <div className={`${style.boxWidthMax}`}>
-                <label htmlFor="ordInt.">Val. Taxa</label>
-                <input type="text" />
+                <label htmlFor="taxa">Val. Taxa</label>
+                <input id="taxa" type="number" step=".01"/>
             </div>
             <div Main className={`${style.boxWidthMax}`}>
-                <label htmlFor="ordInt.">Val. Faturado</label>
-                <input type="text" />
+                <label htmlFor="faturado" >Val. Faturado</label>
+                <input id="faturado" type="number" step=".01" />
             </div>
             <div className={`${style.boxButton}`}>
                 <button type='submit' className={`${style.buttonSalvar}`}>

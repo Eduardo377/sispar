@@ -5,24 +5,7 @@ export default function Forms() {
 
     const navigate = useNavigate();
 
-    const validateEmail = (email) => {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
-    };
-
-    const handleLogin = (e) => {
-        const email = e.target.email.value;
-        const senha = e.target.senha.value;
-
-        if (!validateEmail(email)) {
-            alert('Por favor, insira um email válido.');
-            return;
-        }
-
-        if (!senha && senha.length < 6) {
-            alert('Preencha todos os campos.');
-            return;
-        }
+    const handleLogin = () => {
 
         navigate('/reembolsos');
     };
@@ -32,7 +15,7 @@ export default function Forms() {
     };
 
     return (
-        <form onSubmit={handleLogin}>
+        <form>
             <input
                 type="email"
                 name="email"
