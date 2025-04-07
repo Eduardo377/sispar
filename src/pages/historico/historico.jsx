@@ -5,7 +5,7 @@ import Navbar from '../../components/navbar/Navbar.jsx';
 import vectorHomeIndice from '../../assets/Dashboard/vectorHomeIndice.png';
 import arrowRight from '../../assets/Dashboard/arrowRight.png';
 
-export default function Solicitacao() {
+export default function Historico() {
     return (
 
         <div
@@ -16,10 +16,10 @@ export default function Solicitacao() {
             <main className={style.main}>
                 <section>
                     <span>
-                        <img src={vectorHomeIndice} alt="" />
-                        <img src={arrowRight} alt="" />
+                        <img src={vectorHomeIndice} alt="casa pequena" />
+                        <img src={arrowRight} alt="seta pra direita" />
                         <p>Reembolso</p>
-                        <img src={arrowRight} alt="" />
+                        <img src={arrowRight} alt="seta pra direita" />
                         <p>Histórico</p>
                     </span>
                 </section>

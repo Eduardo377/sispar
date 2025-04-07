@@ -10,7 +10,7 @@ import historicoIcon from "../../assets/Header/bottonHistórico.png";
 import sairIcon from "../../assets/Header/bottonSair.png";
 
 const menuItems = [
-    { path: "#", icon: homeIcon, label: "Início" },
+    { path: "/home", icon: homeIcon, label: "Início" },
     { path: "/reembolsos", icon: reembolsoIcon, label: "Reembolsos" },
     { path: "/analise", icon: analiseIcon, label: "Análises" },
     { path: "/historico", icon: historicoIcon, label: "Histórico" },

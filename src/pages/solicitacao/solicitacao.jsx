@@ -35,10 +35,10 @@ export default function Solicitacao() {
             <main className={style.main}>
                 <section>
                     <span>
-                        <img src={vectorHomeIndice} alt="" />
-                        <img src={arrowRight} alt="" />
+                    <img src={vectorHomeIndice} alt="casa pequena" />
+                    <img src={arrowRight} alt="seta pra direita" />
                         <p>Reembolso</p>
-                        <img src={arrowRight} alt="" />
+                        <img src={arrowRight} alt="seta pra direita" />
                         <p>Solicitação de Reembolso</p>
                     </span>
                     <form action={`#`} className={`${style.containerFrom}`}>
