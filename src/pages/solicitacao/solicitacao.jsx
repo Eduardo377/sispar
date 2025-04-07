@@ -5,6 +5,8 @@ import BoxInfos from '../../components/solicitacoes/boxInfos/BoxInfos.jsx';
 import BoxDate from '../../components/solicitacoes/boxDate/BoxDate.jsx';
 import Values from '../../components/solicitacoes/values/Values.jsx';
 import Table from '../../components/solicitacoes/table/table.jsx';
+import {Modal} from '../../components/modal/Modal.jsx';
+
 import data from '../../data/initialTableData.json';
 
 
@@ -34,9 +36,7 @@ export default function Solicitacao() {
     const totalFaturado = data.reduce((total, item) => total + item.valueBilled, 0).toFixed(2);
     const totalDespesa = data.reduce((total, item) => total + item.expense, 0).toFixed(2);
 
-
     return (
-
         <div>
             <Navbar />
             <main className={style.main}>

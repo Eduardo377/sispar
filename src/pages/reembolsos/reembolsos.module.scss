@@ -1,5 +1,6 @@
 .body {
     display: flex;
+    overflow: hidden;
 }
 
 .main {
@@ -38,28 +39,45 @@
         align-items: center;
 
         article {
-            width: 70%;
+            width: 50%;
             height: 80%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
 
-            .infoContainer {
-                border-right: 1px solid var(--primary-light-blue-gray);
+            h2 {
+                font-weight: 700;
+                font-size: 2rem;
+            }
+
+            p {
+                margin-top: 1%;
+                font-weight: 400;
+                font-size: 1rem;
+            }
+
+            .infos {
+                display: flex;
+                flex-direction: column;
+                align-self: start;
             }
 
             div {
                 display: flex;
                 justify-content: space-between;
+                width: 100%;
             }
 
             .infoContainer {
                 margin-top: 3rem;
                 border-right: 1px solid var(--primary-light-blue-gray);
                 height: 10%;
-                width: 80%;
+                width: 100%;
                 border-radius: 6px;
+                flex-wrap: wrap;
+
 
                 .infoFigure {
                     display: flex;
@@ -105,6 +123,10 @@
                     background-color: var(--primary-burgundy-red);
                     padding: 5%;
                 }
+
+                figure {
+                    flex-wrap: nowrap;
+                }
             }
 
             .infoContainer:hover {
@@ -116,7 +138,7 @@
                 display: flex;
                 justify-content: flex-start;
                 margin-top: 3%;
-
+                width: 100%;
 
                 img {
                     margin-right: 1%;

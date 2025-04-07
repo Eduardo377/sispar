@@ -2,17 +2,20 @@
     margin-top: 2rem;
     height: 30%;
     width: 80%;
+    flex-wrap: wrap;
 
     .card {
         display: flex;
         flex-direction: column;
         justify-content: center !important;
         align-items: center;
-        width: 30%;
+        width: 25%;
         border-radius: 6px;
         border-right: 1px solid var(--primary-light-blue-gray);
         font-weight: 700;
         font-size: 1.3rem;
+        cursor: pointer;
+        gap: 10%;
 
         img {
             width: 16%;

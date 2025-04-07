@@ -53,7 +53,9 @@ export default function Navbar() {
                             <li key={path}>
                                 <button
                                     className={style.headerButton}
-                                    onClick={() => navigateTo(path)}
+                                    onClick={() => {
+                                        navigateTo(path)
+                                    }}
                                     aria-label={`Navegar para ${label}`}
                                     aria-current={location.pathname === path ? "page" : undefined}
                                 >

@@ -3,9 +3,6 @@ import Card from '../../components/reembolsos/dashboard/cards/Card.jsx';
 
 import style from './reembolsos.module.scss';
 
-import solicitarReeembolso from '../../assets/Dashboard/solicitarReembolso.png';
-import solicitarAnalise from '../../assets/Dashboard/solicitarAnálises.png';
-import solicitarHistorico from '../../assets/Dashboard/solicitarHistórico.png';
 import vectorHomeIndice from '../../assets/Dashboard/vectorHomeIndice.png';
 import arrowRight from '../../assets/Dashboard/arrowRight.png';
 import NSolicitados from '../../assets/Dashboard/N-Solicitados.png';
@@ -28,9 +25,9 @@ export default function Reembolsos() {
                 <section>
                     <article>
                         <div className={`${style.infos}`}>
-                            <h4>
+                            <h2>
                                 Sistema de Reembolsos
-                            </h4>
+                            </h2>
                             <p>
                                 Solicite novos pedidos de reembolso, visualize solicitações em análise e todo o histórico.
                             </p>

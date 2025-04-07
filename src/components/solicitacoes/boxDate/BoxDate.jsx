@@ -7,7 +7,7 @@ export default function BoxDate() {
     return (
         <div className={`${style.boxDate}`}>
             <div className={`${style.boxDateInfos} ${style.box}`}>
-                <label htmlFor="date">Data</label>
+                <label htmlFor="date" name="date" >Data</label>
                 <div className={`${style.boxTransparentInput} `}>
                     <input type="date" name="date" className={`${style.transparentInput}${style.date}`} value="AAAA-MM-DD" min="1900-01-01" max="2300-12-31"
                     />
@@ -18,11 +18,10 @@ export default function BoxDate() {
             </div>
             <div className={`${style.boxDespesa}`}>
                 <div className={`${style.box}`}>
-                    <label htmlFor="despesa">Tipo de Despesa</label>
+                    <label htmlFor="despesa" name="despesa" >Tipo de Despesa</label>
                     <div className={`${style.boxTransparentInput}`}>
                         <select
                             htmlFor="despesa"
-                            name="despesa"
                             className={`${style.despesa} ${style.transparentInput}`}
                         >
                             <option value="selecionar" className={`${style.despesa}`}
@@ -50,11 +49,10 @@ export default function BoxDate() {
             </div>
             <div className={`${style.boxCustos}`}>
                 <div className={`${style.box}`}>
-                    <label htmlFor="custos">Controle de Custo</label>
+                    <label htmlFor="custos" name="custos" >Controle de Custo</label>
                     <div className={`${style.boxTransparentInput}`}>
                         <select
                             htmlFor="custos"
-                            name="custos"
                             className={`${style.custos}`}
                         >
                             <option value="selecionar" className={`${style.custos}`}
