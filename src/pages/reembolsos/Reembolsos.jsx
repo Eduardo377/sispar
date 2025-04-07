@@ -1,6 +1,5 @@
 import Navbar from '../../components/navbar/Navbar.jsx';
 import Card from '../../components/reembolsos/dashboard/cards/Card.jsx';
-import Info from '../../components/reembolsos/dashboard/infos/Info.jsx';
 
 import style from './reembolsos.module.scss';
 
