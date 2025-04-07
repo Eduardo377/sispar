@@ -16,44 +16,45 @@
         border-radius: 0.375rem;
         border: 0.01rem solid var(--primary-light-blue-gray);
 
-        tr {
+        th {
+            font-weight: 300;
+        }
 
-            th {
-                font-weight: 300;
-            }
+        th,
+        td {
+            border: 0.01rem solid var(--primary-light-blue-gray);
+            padding: 0.3rem;
+        }
 
-            th,
-            td {
-                border: 0.01rem solid var(--primary-light-blue-gray);
-                padding: 0.3rem;
-            }
+        td:nth-child(1) {
+            position: relative;
+            z-index: 1;
+            color: transparent;
+        }
 
-            td:nth-child(2) {
-                max-width: 9px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
+        td:nth-child(1):hover {
+            background-color: var(--primary-burgundy-red);
+        }
 
-            td:nth-child(7) {
-                max-width: 12px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
+        td:nth-child(2) {
+            max-width: 9px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-            td:nth-child(8) {
-                max-width: 35px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
+        td:nth-child(7) {
+            max-width: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-            td {
-                bottom {
-                    z-index: 15;
-                };
-            }
+        td:nth-child(8) {
+            max-width: 35px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 }

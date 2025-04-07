@@ -1,25 +1,53 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import initialTableData from '../../../data/initialTableData.json';
 import style from './table.module.scss';
-
 import bin from '../../../assets/Dashboard/binVentor.png';
 import descriptionReason from '../../../assets/Dashboard/descriptionReasonVector.png';
-
 import { Modal } from '../../modal/Modal.jsx';
 
+
 export default function Table() {
-    
+    const [tableData, setTableData] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [rowToDelete, setRowToDelete] = useState(null);
 
-    const handleShowModalDelete = (rowIndex) => {
-        setRowToDelete(rowIndex);
+    useEffect(() => {
+        const loadData = () => {
+            try {
+                const savedData = localStorage.getItem('tableData');
+                if (savedData) {
+                    setTableData(JSON.parse(savedData));
+                } else {
+                    setTableData(initialTableData);
+                    localStorage.setItem('tableData', JSON.stringify(initialTableData));
+                }
+            } catch (error) {
+                console.error('Erro ao carregar dados:', error);
+                setTableData(initialTableData);
+            }
+        };
+
+        loadData();
+    }, []);
+
+    useEffect(() => {
+        if (tableData.length > 0) {
+            localStorage.setItem('tableData', JSON.stringify(tableData));
+        }
+    }, [tableData]);
+
+    const handleDeleteRow = (id) => {
+        const updatedData = tableData.filter(row => row.id !== id);
+        setTableData(updatedData);
+    };
+
+    const handleShowModalDelete = (id) => {
+        setRowToDelete(id);
         setShowModal(true);
     };
 
     const handleConfirm = () => {
-        // Lógica para deletar a linha (rowToDelete)
-        console.log(`Deletando linha ${rowToDelete}`);
+        handleDeleteRow(rowToDelete);
         setShowModal(false);
         setRowToDelete(null);
     };
@@ -29,12 +57,16 @@ export default function Table() {
         setRowToDelete(null);
     };
 
+    if (!tableData) {
+        return <div>Carregando dados...</div>;
+    }
+
     return (
-        <article className={`${style.tableWrapper}`}>
-            <table className={`${style.tableContainer}`}>
+        <article className={style.tableWrapper}>
+            <table className={style.tableContainer}>
                 <thead>
-                    <tr className={`${style.tableHead}`}>
-                        <th className={`${style.colFirstBox}`}>{" "}</th>
+                    <tr className={style.tableHead}>
+                        <th className={style.colFirstBox}>{" "}</th>
                         <th>Colaborador(a)</th>
                         <th>Empresa</th>
                         <th>Nº Prest.</th>
@@ -53,116 +85,44 @@ export default function Table() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <button onClick={handleShowModalDelete} >
-                                <img
-                                    src={bin}
-                                    alt="Lixeira para exclusão"
+                    {tableData.map((row) => (
+                        <tr key={row.id}>
+                            <td className={`${style.deleteButton}`}>
+                                <img src={bin} alt="Lixeira para exclusão"
+                                    onClick={() => handleShowModalDelete(row.id)}
+                                    aria-label={`Excluir ${row.name}`}
+                                    className={`${style.buttonDelete}`}
                                 />
-                            </button>
-                            {showModal && (
-                                console.log('Modal deve estar visível agora'),
-                                <Modal
-                                    onConfirm={handleConfirm}
-                                    onCancel={handleCancel}
-                                    confirm="Deseja realmente excluir os dados dessa linha?"
-                                    cancel="Sim, limpar"
-                                />
-                            )}
-                        </td>
-                        <td>Vitor Carvalho de Souza</td>
-                        <td>WSS001</td>
-                        <td>329456</td>
-                        <td>08/01/2025</td>
-                        <td>
-                            <img src={descriptionReason} alt="Descrição do motivo" />
-                        </td>
-                        <td>Desp. de viagem administrativa</td>
-                        <td>1100110002 - FIN VICE-PRESIDENCIA FINANCAS MTZ</td>
-                        <td>0003</td>
-                        <td>002</td>
-                        <td>001</td>
-                        <td>BRL</td>
-                        <td>434Km</td>
-                        <td>0.65</td>
-                        <td>242.10</td>
-                        <td>40.05</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button onClick={handleShowModalDelete} >
-                                <img
-                                    src={bin}
-                                    alt="Lixeira para exclusão"
-                                />
-                            </button>
-                            {showModal && (
-                                console.log('Modal deve estar visível agora'),
-                                <Modal
-                                    onConfirm={handleConfirm}
-                                    onCancel={handleCancel}
-                                    confirm="Deseja realmente excluir os dados dessa linha?"
-                                    cancel="Sim, limpar"
-                                />
-                            )}
-                        </td>
-                        <td>Vanessa Portugal</td>
-                        <td>WSS002</td>
-                        <td>987789</td>
-                        <td>01/01/2025</td>
-                        <td>
-                            <img src={descriptionReason} alt="Descrição do motivo" />
-                        </td>
-                        <td>Desp. de viagem administrativa</td>
-                        <td>1100110102 - FIN CONTABILIDADE MTZ</td>
-                        <td>0002</td>
-                        <td>005</td>
-                        <td>001</td>
-                        <td>ARS</td>
-                        <td>289Km</td>
-                        <td>0.37</td>
-                        <td>106.93</td>
-                        <td>0.00</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button onClick={handleShowModalDelete} >
-                                <img
-                                    src={bin}
-                                    alt="Lixeira para exclusão"
-                                />
-                            </button>
-                            {showModal && (
-                                console.log('Modal deve estar visível agora'),
-                                <Modal
-                                    onConfirm={handleConfirm}
-                                    onCancel={handleCancel}
-                                    confirm="Deseja realmente excluir os dados dessa linha?"
-                                    cancel="Sim, limpar"
-                                />
-                            )}
-                        </td>
-                        <td>Washington Klinglon</td>
-                        <td>WSS003</td>
-                        <td>546791</td>
-                        <td>03/01/2025</td>
-                        <td>
-                            <img src={descriptionReason} alt="Descrição do motivo" />
-                        </td>
-                        <td>Eventos de apresentação</td>
-                        <td>1100109002 - FIN CONTROLES INTERNOS MTZ</td>
-                        <td>0001</td>
-                        <td>005</td>
-                        <td>001</td>
-                        <td>USD</td>
-                        <td>197Km</td>
-                        <td>0.75</td>
-                        <td>109.75</td>
-                        <td>29.97</td>
-                    </tr>
+                                {showModal && (
+                                    <Modal
+                                        onConfirm={handleConfirm}
+                                        onCancel={handleCancel}
+                                        confirm="Deseja realmente excluir os dados dessa linha?"
+                                        cancel="Sim, excluir"
+                                    />
+                                )}
+                            </td>
+                            <td>{row.name}</td>
+                            <td>{row.company}</td>
+                            <td>{row.account}</td>
+                            <td>{row.date}</td>
+                            <td>
+                                <img src={descriptionReason} alt="Descrição do motivo" />
+                            </td>
+                            <td>{row.expenseType}</td>
+                            <td>{row.costControl}</td>
+                            <td>{row.ordInt}</td>
+                            <td>{row.div}</td>
+                            <td>{row.pep}</td>
+                            <td>{row.currency}</td>
+                            <td>{row.distance}</td>
+                            <td>{row.valueKm.toFixed(2)}</td>
+                            <td>{row.valueBilled.toFixed(2)}</td>
+                            <td>{row.expense.toFixed(2)}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </article>
-    )
+    );
 }
