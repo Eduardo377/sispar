@@ -6,7 +6,7 @@ header {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 2;
+    z-index: 20;
 }
 
 .expanded {
@@ -52,10 +52,10 @@ header {
             width: 0.9vw;
             height: 0.9vw;
         }
+    }
 
-        &:hover {
-            background-color: var(--tertiary-dark-blue);
-        }
+    .headerButton:hover {
+        background-color: var(--tertiary-dark-blue);
     }
 
     .container {
@@ -82,6 +82,8 @@ header {
             justify-content: space-between;
             height: 60%;
             list-style: none;
+            position: relative;
+            z-index: -1;
 
             li {
                 display: flex !important;

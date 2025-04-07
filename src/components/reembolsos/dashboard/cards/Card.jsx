@@ -7,42 +7,33 @@ import solicitarReeembolso from '../../../../assets/Dashboard/solicitarReembolso
 import solicitarAnalise from '../../../../assets/Dashboard/solicitarAnálises.png';
 import solicitarHistorico from '../../../../assets/Dashboard/solicitarHistórico.png';
 
+const menuItems = [
+    { path: "/solicitacao", label: "solicitacao", image: solicitarReeembolso, alt: "icone de solicitar reembolso", title: "Solicitar Reembolso" },
+    { path: "/analise", label: "Análises", image: solicitarAnalise, alt: "icone analise", title: "Verificar análises" },
+    { path: "/historico", label: "Histórico", image: solicitarHistorico, alt: "icone historico", title: "Histórico" },
+];
+
 export default function Card() {
 
     const navigate = useNavigate();
 
-    const handleSolicitacao = () => {
-        navigate('/solicitacao');
-    };
-
-    const handleAnalise = () => {
-        navigate('/analise');
-    };
-
-    const handleHistorico = () => {
-        navigate('/historico');
-    };
-
     return (
-        <div className={`${style.cardsContainer}`}>
-            <div className={`${style.card}`} onClick={handleSolicitacao}>
-                <img src={solicitarReeembolso} alt="icone de solicitar reembolso" />
-                <h4>
-                    Solicitar Reembolso
-                </h4>
-            </div>
-            <div className={`${style.card}`} onClick={handleAnalise}>
-                <img src={solicitarAnalise} alt="icone analise" />
-                <h4>
-                    Verificar análises
-                </h4>
-            </div>
-            <div className={`${style.card}`} onClick={handleHistorico}>
-                <img src={solicitarHistorico} alt="icone historico" />
-                <h4>
-                    "Histórico"
-                </h4>
-            </div>
-        </div >
+        <div className={style.cardsContainer}>
+            {menuItems.map(({ path, image, alt, title }) => (
+                <div
+                    key={path}
+                    className={style.card}
+                    onClick={() => {
+                        navigate(path);
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === "Enter" && navigate(path)}
+                >
+                    <img src={image} alt={alt} />
+                    <h4>{title}</h4>
+                </div>
+            ))}
+        </div>
     );
 }

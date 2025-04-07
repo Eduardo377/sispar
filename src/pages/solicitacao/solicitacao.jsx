@@ -34,9 +34,7 @@ export default function Solicitacao() {
     const totalFaturado = data.reduce((total, item) => total + item.valueBilled, 0).toFixed(2);
     const totalDespesa = data.reduce((total, item) => total + item.expense, 0).toFixed(2);
 
-
     return (
-
         <div>
             <Navbar />
             <main className={style.main}>

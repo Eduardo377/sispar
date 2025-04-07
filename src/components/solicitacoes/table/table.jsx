@@ -93,14 +93,6 @@ export default function Table() {
                                     aria-label={`Excluir ${row.name}`}
                                     className={`${style.buttonDelete}`}
                                 />
-                                {showModal && (
-                                    <Modal
-                                        onConfirm={handleConfirm}
-                                        onCancel={handleCancel}
-                                        confirm="Deseja realmente excluir os dados dessa linha?"
-                                        cancel="Sim, excluir"
-                                    />
-                                )}
                             </td>
                             <td>{row.name}</td>
                             <td>{row.company}</td>
@@ -123,6 +115,14 @@ export default function Table() {
                     ))}
                 </tbody>
             </table>
+            {showModal && (
+                <Modal
+                    onConfirm={handleConfirm}
+                    onCancel={handleCancel}
+                    confirm="Deseja realmente excluir os dados dessa linha?"
+                    cancel="Sim, excluir"
+                />
+            )}
         </article>
     );
 }
