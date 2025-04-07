@@ -1,18 +1,19 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 
 import style from './values.module.scss';
 import cruz from '../../../assets/Dashboard/cruzVector.png';
 import Cancel from '../../../assets/Dashboard/arrowLeftCancel.png';
 
-// import { Modal } from '../../modal/Modal.jsx';
-
-// const [showModal, setShowModal] = useState(false);
-
-// const handleShowModalReset = () => setShowModal(true);
-// const handleConfirm = () => setShowModal(false);
-// const handleCancel = () => setShowModal(false);
+import { Modal } from '../../modal/Modal.jsx';
 
 export default function Values() {
+    
+    const [showModal, setShowModal] = useState(false);
+    
+    const handleShowModalReset = () => setShowModal(true);
+    const handleConfirm = () => setShowModal(false);
+    const handleCancel = () => setShowModal(false);
+
     return (
         <article className={`${style.boxValues}`}>
             <div className={`${style.boxWidthMin}`}>
@@ -54,11 +55,11 @@ export default function Values() {
                 </button>
                 <button
                     className={`${style.buttonCancelar}`}
-                    // onClick={handleShowModalReset}
+                    onClick={handleShowModalReset}
                 >
                     <img src={Cancel} alt="" />
                 </button>
-                {/* {showModal && (
+                {showModal && (
                     console.log('Modal deve estar visível agora'),
                     <Modal
                         onConfirm={handleConfirm}
@@ -66,7 +67,7 @@ export default function Values() {
                         confirm="Deseja realmente limpar os campos preenchidos acima?"
                         cancel="Sim, limpar"
                     />
-                )} */}
+                )}
             </div>
         </article>
     )

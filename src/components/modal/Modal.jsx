@@ -1,10 +1,10 @@
-import './modal.module.scss';
+import style from './modal.module.scss';
 
 export const Modal = ({ onConfirm, onCancel, confirm, cancel }) => {
     return (
         <div className={style.modalContainer}>
             <div className={style.modalBody}>
-                <h3>{confirm}</h3>
+                <p>{confirm}</p>
                 <div className={style.boxButtonModal}>
                     <button onClick={onCancel} className={style.btnCancel}>
                         Continuar Editando

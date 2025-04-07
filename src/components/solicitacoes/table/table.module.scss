@@ -48,6 +48,12 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
+
+            td {
+                bottom {
+                    z-index: 15;
+                };
+            }
         }
     }
 }

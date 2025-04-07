@@ -1,25 +1,34 @@
+import React, { useState } from 'react';
+
 import style from './table.module.scss';
 
 import bin from '../../../assets/Dashboard/binVentor.png';
 import descriptionReason from '../../../assets/Dashboard/descriptionReasonVector.png';
 
-// import  {Modal}  from '../../modal/Modal.jsx';
-
-//     const [showModal, setShowModal] = useState(false);
-
-//     const handleShowModalDelete = () => {
-//         setShowModal(true);
-//     };
-
-//     const handleConfirm = () => {
-//         setShowModal(false);
-//     };
-
-//     const handleCancel = () => {
-//         setShowModal(false);
-//     };
+import { Modal } from '../../modal/Modal.jsx';
 
 export default function Table() {
+    
+    const [showModal, setShowModal] = useState(false);
+    const [rowToDelete, setRowToDelete] = useState(null);
+
+    const handleShowModalDelete = (rowIndex) => {
+        setRowToDelete(rowIndex);
+        setShowModal(true);
+    };
+
+    const handleConfirm = () => {
+        // Lógica para deletar a linha (rowToDelete)
+        console.log(`Deletando linha ${rowToDelete}`);
+        setShowModal(false);
+        setRowToDelete(null);
+    };
+
+    const handleCancel = () => {
+        setShowModal(false);
+        setRowToDelete(null);
+    };
+
     return (
         <article className={`${style.tableWrapper}`}>
             <table className={`${style.tableContainer}`}>
@@ -46,7 +55,21 @@ export default function Table() {
                 <tbody>
                     <tr>
                         <td>
-                            <img src={bin} alt="Lixeira para exclusão" />
+                            <button onClick={handleShowModalDelete} >
+                                <img
+                                    src={bin}
+                                    alt="Lixeira para exclusão"
+                                />
+                            </button>
+                            {showModal && (
+                                console.log('Modal deve estar visível agora'),
+                                <Modal
+                                    onConfirm={handleConfirm}
+                                    onCancel={handleCancel}
+                                    confirm="Deseja realmente excluir os dados dessa linha?"
+                                    cancel="Sim, limpar"
+                                />
+                            )}
                         </td>
                         <td>Vitor Carvalho de Souza</td>
                         <td>WSS001</td>
@@ -68,7 +91,21 @@ export default function Table() {
                     </tr>
                     <tr>
                         <td>
-                            <img src={bin} alt="Lixeira para exclusão" />
+                            <button onClick={handleShowModalDelete} >
+                                <img
+                                    src={bin}
+                                    alt="Lixeira para exclusão"
+                                />
+                            </button>
+                            {showModal && (
+                                console.log('Modal deve estar visível agora'),
+                                <Modal
+                                    onConfirm={handleConfirm}
+                                    onCancel={handleCancel}
+                                    confirm="Deseja realmente excluir os dados dessa linha?"
+                                    cancel="Sim, limpar"
+                                />
+                            )}
                         </td>
                         <td>Vanessa Portugal</td>
                         <td>WSS002</td>
@@ -90,7 +127,21 @@ export default function Table() {
                     </tr>
                     <tr>
                         <td>
-                            <img src={bin} alt="Lixeira para exclusão" />
+                            <button onClick={handleShowModalDelete} >
+                                <img
+                                    src={bin}
+                                    alt="Lixeira para exclusão"
+                                />
+                            </button>
+                            {showModal && (
+                                console.log('Modal deve estar visível agora'),
+                                <Modal
+                                    onConfirm={handleConfirm}
+                                    onCancel={handleCancel}
+                                    confirm="Deseja realmente excluir os dados dessa linha?"
+                                    cancel="Sim, limpar"
+                                />
+                            )}
                         </td>
                         <td>Washington Klinglon</td>
                         <td>WSS003</td>
