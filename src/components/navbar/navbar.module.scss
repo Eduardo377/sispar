@@ -2,22 +2,25 @@ header {
     width: 6vw;
     height: 100vh;
     background-color: var(--background);
-    transition: width 0.3s ease;
+    transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 20;
+    z-index: 3;
+    overflow: hidden;
 }
 
 .expanded {
     width: 11.8vw;
     border: 0.5px var(--primary-light-blue-gray) solid;
+    transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    overflow: hidden;
 
     button {
         border: none;
     }
 
-    
+
     img {
         align-self: center;
     }
@@ -31,6 +34,8 @@ header {
 
 .collapsed {
     width: 6vw;
+    transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    overflow: hidden;
 }
 
 .navbar {
@@ -40,22 +45,34 @@ header {
     align-items: flex-start;
     height: 96%;
     padding: 1rem;
-    
+    transition: all 0.3s ease;
+
     .headerButton {
         cursor: pointer;
         background-color: var(--secondary-intense-blue);
         width: 2.5vw;
         height: 2.5vw;
         border: none;
+        position: relative;
+        z-index: 5;
+        transition:
+            background-color 0.3s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
 
         img {
             width: 0.9vw;
             height: 0.9vw;
         }
-    }
 
-    .headerButton:hover {
-        background-color: var(--tertiary-dark-blue);
+        &:hover {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            background-color: var(--tertiary-dark-blue) !important;
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
     }
 
     .container {
@@ -64,7 +81,9 @@ header {
         flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;
-        
+        position: relative;
+        z-index: 1;
+
         picture {
             display: flex;
             align-items: flex-start;
@@ -88,9 +107,11 @@ header {
             li {
                 display: flex !important;
                 align-items: center;
-                
+                overflow: hidden;
+
                 button {
                     margin-right: 1rem;
+                    flex-shrink: 0
                 }
             }
         }
@@ -115,11 +136,24 @@ header {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
+    transition:
+        opacity 0.2s ease-out,
+        visibility 0.2s ease-out;
+    width: 0;
+    overflow: hidden;
 }
 
 .visible {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.3s ease;
+    transition:
+        opacity 0.3s ease-out 0.1s,
+        visibility 0.3s ease-out 0.1s;
     display: block;
+}
+
+h3,
+p {
+    white-space: nowrap;
+    transition: all 0.3s ease-out;
 }

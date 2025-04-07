@@ -1,6 +1,25 @@
+import React, { useEffect } from 'react';
+
 import style from './modal.module.scss';
 
 export const Modal = ({ onConfirm, onCancel, confirm, cancel }) => {
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                onCancel();
+            }
+        };
+
+        document.body.style.overflow = 'hidden';
+        
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            document.body.style.overflow = 'unset';
+        };
+    }, [onCancel]);
+
     return (
         <div className={style.modalContainer}
             role="dialog"

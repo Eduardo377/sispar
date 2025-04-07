@@ -5,6 +5,8 @@ import BoxInfos from '../../components/solicitacoes/boxInfos/BoxInfos.jsx';
 import BoxDate from '../../components/solicitacoes/boxDate/BoxDate.jsx';
 import Values from '../../components/solicitacoes/values/Values.jsx';
 import Table from '../../components/solicitacoes/table/table.jsx';
+import {Modal} from '../../components/modal/Modal.jsx';
+
 import data from '../../data/initialTableData.json';
 
 

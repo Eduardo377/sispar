@@ -54,7 +54,6 @@ export default function Navbar() {
                                 <button
                                     className={style.headerButton}
                                     onClick={() => {
-                                        console.log(`click`);
                                         navigateTo(path)
                                     }}
                                     aria-label={`Navegar para ${label}`}
