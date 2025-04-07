@@ -35,23 +35,7 @@ export default function Reembolsos() {
                                 Solicite novos pedidos de reembolso, visualize solicitações em análise e todo o histórico.
                             </p>
                         </div>
-                        <div className={`${style.cardsContainer}`}>
-                            <Card
-                                image={solicitarReeembolso}
-                                description="icone de solicitar reembolso"
-                                title="Solicitar Reembolso"
-                            />
-                            <Card
-                                image={solicitarAnalise}
-                                description="icone analise"
-                                title="Verificar análises"
-                            />
-                            <Card
-                                image={solicitarHistorico}
-                                description="icone historico"
-                                title="Histórico"
-                            />
-                        </div >
+                        < Card />
                         <div className={`${style.infoContainer}`}>
                             <figure className={style.infoFigure}>
                                 <img src={NSolicitados} className={style.NSolicitadosImage} alt='icone de solicitações' />
