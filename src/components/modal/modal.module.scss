@@ -32,7 +32,8 @@
         }
 
         .boxButtonModal {
-            display: flex;
+            display: flex !important;
+            flex-wrap: nowrap;
             gap: 4%;
             width: 100%;
 
@@ -49,11 +50,11 @@
 
             .btnCancel {
                 background-color: var(--tertiary-dark-blue);
-                width: 65%;
+                width: 50%;
             }
 
             .btnConfirm {
-                width: 30%;
+                width: 35%;
                 background-color: var(--primary-vibrant-turquoise-blue);
             }
         }

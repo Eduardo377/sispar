@@ -18,19 +18,19 @@ export default function Values() {
         <article className={`${style.boxValues}`}>
             <div className={`${style.boxWidthMin}`}>
                 <label htmlFor="ordInt">Ord Int.</label>
-                <input id="ordInt" type="number" />
+                <input id="ordInt" type="text" />
             </div>
             <div className={`${style.boxWidthMin}`}>
                 <label htmlFor="pep">PEP</label>
-                <input id="pep" type="number" />
+                <input id="pep" type="text" />
             </div>
             <div className={`${style.boxWidthMin}`}>
                 <label htmlFor="div">Div.</label>
-                <input id="div" type="number" />
+                <input id="div" type="text" />
             </div>
             <div className={`${style.boxWidthMax}`}>
                 <label htmlFor="distancia">Dist. /Km</label>
-                <input id="distancia" type="number" />
+                <input id="distancia" type="text" />
             </div>
             <div className={`${style.boxWidthMin}`}>
                 <label htmlFor="moeda">Moeda</label>
@@ -38,7 +38,7 @@ export default function Values() {
             </div>
             <div className={`${style.boxWidthMax}`}>
                 <label htmlFor="valorKM">Valor / Km</label>
-                <input id="valorKM" type="text" />
+                <input id="valorKM" type="number" step=".01" />
             </div>
             <div className={`${style.boxWidthMax}`}>
                 <label htmlFor="taxa">Val. Taxa</label>
@@ -60,7 +60,6 @@ export default function Values() {
                     <img src={Cancel} alt="" />
                 </button>
                 {showModal && (
-                    console.log('Modal deve estar visível agora'),
                     <Modal
                         onConfirm={handleConfirm}
                         onCancel={handleCancel}
