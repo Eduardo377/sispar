@@ -67,6 +67,27 @@
                 width: 80%;
                 border-radius: 6px;
 
+                .infoFigure {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    width: 25%;
+                
+                    img {
+                        border-radius: 6px;
+                        padding: 0.4rem;
+                    }
+                
+                    figcaption {
+                        width: 60%;
+                    }
+                    
+                    h4 {
+                        font-weight: 700;
+                        font-size: 1rem;
+                    }
+                }
+
 
                 .NSolicitadosImage {
                     border: var(--primary-vibrant-turquoise-blue) solid 1px;

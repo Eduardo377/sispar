@@ -54,34 +54,26 @@ export default function Reembolsos() {
                             />
                         </div >
                         <div className={`${style.infoContainer}`}>
-                            <Info
-                                image={NSolicitados}
-                                styleClassName={`${style.NSolicitadosImage}`}
-                                description="icone de solicitações"
-                                info="182"
-                                title="Solicitados"
-                            />
-                            <Info
-                                image={NAnalises}
-                                styleClassName={`${style.NAnalisesImage}`}
-                                description="icone de analises"
-                                info="74"
-                                title="Em análises"
-                            />
-                            <Info
-                                image={NAprovados}
-                                styleClassName={`${style.NAprovadosImage}`}
-                                description="icone de aprovados"
-                                info="195"
-                                title="Aprovados"
-                            />
-                            <Info
-                                image={NRejeitados}
-                                styleClassName={`${style.NRejeitadosImage}`}
-                                description="icone de rejeitados"
-                                info="41"
-                                title="Rejeitados"
-                            />
+                            <figure className={style.infoFigure}>
+                                <img src={NSolicitados} className={style.NSolicitadosImage} alt='icone de solicitações' />
+                                <h4>182</h4>
+                                <figcaption>Solicitados</figcaption>
+                            </figure>
+                            <figure className={style.infoFigure}>
+                                <img src={NAnalises} className={style.NAnalisesImage} alt="icone de analises" />
+                                <h4>74</h4>
+                                <figcaption>Em análises</figcaption>
+                            </figure>
+                            <figure className={style.infoFigure}>
+                                <img src={NAprovados} className={style.NAprovadosImage} alt="icone de aprovados" />
+                                <h4>195</h4>
+                                <figcaption>Aprovados</figcaption>
+                            </figure>
+                            <figure className={style.infoFigure}>
+                                <img src={NRejeitados} className={style.NRejeitadosImage} alt="icone de rejeitados" />
+                                <h4>41</h4>
+                                <figcaption>Rejeitados</figcaption>
+                            </figure>
                         </div>
                         <figure className={`${style.systemStatus}`}  >
                             <img src={sistemaAtualizado} alt="Ícone de nuvem de atualização de sistema" />

@@ -3,6 +3,7 @@ import BoxInfos from '../../components/solicitacoes/boxInfos/BoxInfos.jsx';
 import BoxDate from '../../components/solicitacoes/boxDate/BoxDate.jsx';
 import Values from '../../components/solicitacoes/values/Values.jsx';
 import Table from '../../components/solicitacoes/table/table.jsx';
+// import  {Modal} from '../../components/modal/Modal.jsx';
 
 import vectorHomeIndice from '../../assets/Dashboard/vectorHomeIndice.png';
 import arrowRight from '../../assets/Dashboard/arrowRight.png';
@@ -10,6 +11,20 @@ import checkIcon from '../../assets/solicitacao/checkVector.png';
 import deleteIcon from '../../assets/solicitacao/deleteVector.png';
 
 import style from './solicitacao.module.scss';
+
+// const [showModal, setShowModal] = useState(false);
+
+// const handleShowModalCancel = () => {
+//     setShowModal(true);
+// };
+
+// const handleConfirm = () => {
+//     setShowModal(false);
+// };
+
+// const handleCancel = () => {
+//     setShowModal(false);
+// };
 
 export default function Solicitacao() {
 

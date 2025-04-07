@@ -1,6 +1,16 @@
+// import { useState } from 'react';
+
 import style from './values.module.scss';
 import cruz from '../../../assets/Dashboard/cruzVector.png';
 import Cancel from '../../../assets/Dashboard/arrowLeftCancel.png';
+
+// import { Modal } from '../../modal/Modal.jsx';
+
+// const [showModal, setShowModal] = useState(false);
+
+// const handleShowModalReset = () => setShowModal(true);
+// const handleConfirm = () => setShowModal(false);
+// const handleCancel = () => setShowModal(false);
 
 export default function Values() {
     return (
@@ -31,20 +41,32 @@ export default function Values() {
             </div>
             <div className={`${style.boxWidthMax}`}>
                 <label htmlFor="taxa">Val. Taxa</label>
-                <input id="taxa" type="number" step=".01"/>
+                <input id="taxa" type="number" step=".01" />
             </div>
             <div Main className={`${style.boxWidthMax}`}>
                 <label htmlFor="faturado" >Val. Faturado</label>
                 <input id="faturado" type="number" step=".01" />
             </div>
             <div className={`${style.boxButton}`}>
-                <button type='submit' className={`${style.buttonSalvar}`}>
+                <button className={`${style.buttonSalvar}`} >
                     <img src={cruz} alt="" />
                     Salvar
                 </button>
-                <button type='submit' className={`${style.buttonCancelar}`}>
+                <button
+                    className={`${style.buttonCancelar}`}
+                    // onClick={handleShowModalReset}
+                >
                     <img src={Cancel} alt="" />
                 </button>
+                {/* {showModal && (
+                    console.log('Modal deve estar visível agora'),
+                    <Modal
+                        onConfirm={handleConfirm}
+                        onCancel={handleCancel}
+                        confirm="Deseja realmente limpar os campos preenchidos acima?"
+                        cancel="Sim, limpar"
+                    />
+                )} */}
             </div>
         </article>
     )

@@ -3,6 +3,22 @@ import style from './table.module.scss';
 import bin from '../../../assets/Dashboard/binVentor.png';
 import descriptionReason from '../../../assets/Dashboard/descriptionReasonVector.png';
 
+// import  {Modal}  from '../../modal/Modal.jsx';
+
+//     const [showModal, setShowModal] = useState(false);
+
+//     const handleShowModalDelete = () => {
+//         setShowModal(true);
+//     };
+
+//     const handleConfirm = () => {
+//         setShowModal(false);
+//     };
+
+//     const handleCancel = () => {
+//         setShowModal(false);
+//     };
+
 export default function Table() {
     return (
         <article className={`${style.tableWrapper}`}>
