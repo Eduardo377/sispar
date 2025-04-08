@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './summarySection.module.scss';
-import checkIcon from '../../../../../assets/solicitacao/checkVector.png';
-import deleteIcon from '../../../../../assets/solicitacao/deleteVector.png';
+import checkIcon from '../../../assets/solicitacao/checkVector.png';
+import deleteIcon from '../../../assets/solicitacao/deleteVector.png';
 
 export default function SummarySection({
     totalFaturado,

@@ -1,14 +1,14 @@
 import Navbar from '../../components/navbar/Navbar.jsx';
+import Breadcrumb from '../../components/breadcrumb/Breadcrumb.jsx';
 import Card from '../../components/reembolsos/dashboard/cards/Card.jsx';
 
 import style from './reembolsos.module.scss';
 
-import vectorHomeIndice from '../../assets/Dashboard/vectorHomeIndice.png';
-import arrowRight from '../../assets/Dashboard/arrowRight.png';
-import NSolicitados from '../../assets/Dashboard/N-Solicitados.png';
 import NAnalises from '../../assets/Dashboard/N-Análises.png';
+import arrowRight from '../../assets/Dashboard/arrowRight.png'
 import NAprovados from '../../assets/Dashboard/N-Aprovados.png';
 import NRejeitados from '../../assets/Dashboard/N-Rejeitados.png';
+import NSolicitados from '../../assets/Dashboard/N-Solicitados.png';
 import sistemaAtualizado from '../../assets/Dashboard/sistemaAtualizado.png';
 
 export default function Reembolsos() {
@@ -17,11 +17,11 @@ export default function Reembolsos() {
         <div className={style.body}>
             <Navbar />
             <main className={style.main}>
-                <span>
-                    <img src={vectorHomeIndice} alt="Ícone de índice da página inicial" />
-                    <img src={arrowRight} alt="Ícone de seta para a direita" />
-                    <p>Reembolso</p>
-                </span>
+                <Breadcrumb
+                    title1={"Reembolsos"}
+                    image={arrowRight}
+                    className={style.hiddenNavegacao}
+                />
                 <section>
                     <article>
                         <div className={`${style.infos}`}>

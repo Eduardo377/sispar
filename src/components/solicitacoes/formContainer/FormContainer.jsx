@@ -14,24 +14,26 @@ export default function FormContainer({
     onDeleteRow
 }) {
     return (
-        <form action={`#`} className={`${style.containerFrom}`}>
-            <BoxInfos
-                formData={formData}
-                onInputChange={onInputChange}
-            />
-            <article className={`${style.containerRegistro}`}>
-                <BoxDate
+        <>
+            <form action={`#`} className={`${style.containerFrom}`}>
+                <BoxInfos
                     formData={formData}
                     onInputChange={onInputChange}
-                    onSelectChange={onSelectChange}
                 />
-                <Values
-                    formData={formData}
-                    onInputChange={onInputChange}
-                    onAddItem={onAddItem}
-                />
-            </article>
+                <article className={`${style.containerRegistro}`}>
+                    <BoxDate
+                        formData={formData}
+                        onInputChange={onInputChange}
+                        onSelectChange={onSelectChange}
+                    />
+                    <Values
+                        formData={formData}
+                        onInputChange={onInputChange}
+                        onAddItem={onAddItem}
+                    />
+                </article>
+            </form>
             <Table data={tableData} onDelete={onDeleteRow} />
-        </form>
+        </>
     );
 }

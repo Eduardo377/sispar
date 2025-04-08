@@ -40,21 +40,21 @@ export default function BoxDate({ formData, onInputChange, onSelectChange }) {
                             value={formData.expenseType}
                             onChange={(e) => onSelectChange('expenseType', e.target.value)}
                         >
-                            <option value="selecionar" className={`${style.despesa}`}
+                            <option value="Selecionar" className={`${style.despesa}`}
                             >Selecionar</option>
-                            <option value="alimentacao" className={`${style.despesa}`}
+                            <option value="Alimentacao" className={`${style.despesa}`}
                             >Alimentação</option>
-                            <option value="combustivel" className={`${style.despesa}`}
+                            <option value="Combustivel" className={`${style.despesa}`}
                             >Combustível</option>
                             <option value="conducao" className={`${style.despesa}`}
                             >Condução</option>
                             <option value="estacionamento" className={`${style.despesa}`}
                             >Estacionamento</option>
-                            <option value="viagemAdmin" className={`${style.despesa}`}
+                            <option value="Viagem Admin" className={`${style.despesa}`}
                             >Viagem admin.</option>
-                            <option value="viagemOperacional" className={`${style.despesa}`}
+                            <option value="Viagem Operacional" className={`${style.despesa}`}
                             >Viagem Operacional</option>
-                            <option value="eventosDeRepresentacao" className={`${style.despesa}`}
+                            <option value="Eventos de Representacao" className={`${style.despesa}`}
                             >Eventos de representação</option>
                         </select>
                         <button type="button" className={`${style.transparentInputButton} ${style.buttonSelectDespesa}`}>
