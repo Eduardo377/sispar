@@ -6,40 +6,9 @@ import descriptionReason from '../../../assets/Dashboard/descriptionReasonVector
 import { Modal } from '../../modal/Modal.jsx';
 
 
-export default function Table() {
-    const [tableData, setTableData] = useState([]);
+export default function Table({ data, onDelete }) {
     const [showModal, setShowModal] = useState(false);
     const [rowToDelete, setRowToDelete] = useState(null);
-
-    useEffect(() => {
-        const loadData = () => {
-            try {
-                const savedData = localStorage.getItem('tableData');
-                if (savedData) {
-                    setTableData(JSON.parse(savedData));
-                } else {
-                    setTableData(initialTableData);
-                    localStorage.setItem('tableData', JSON.stringify(initialTableData));
-                }
-            } catch (error) {
-                console.error('Erro ao carregar dados:', error);
-                setTableData(initialTableData);
-            }
-        };
-
-        loadData();
-    }, []);
-
-    useEffect(() => {
-        if (tableData.length > 0) {
-            localStorage.setItem('tableData', JSON.stringify(tableData));
-        }
-    }, [tableData]);
-
-    const handleDeleteRow = (id) => {
-        const updatedData = tableData.filter(row => row.id !== id);
-        setTableData(updatedData);
-    };
 
     const handleShowModalDelete = (id) => {
         setRowToDelete(id);
@@ -47,7 +16,7 @@ export default function Table() {
     };
 
     const handleConfirm = () => {
-        handleDeleteRow(rowToDelete);
+        onDelete(rowToDelete);
         setShowModal(false);
         setRowToDelete(null);
     };
@@ -56,11 +25,8 @@ export default function Table() {
         setShowModal(false);
         setRowToDelete(null);
     };
-
-    if (!tableData) {
-        return <div>Carregando dados...</div>;
-    }
-
+    
+    console.log(data);
     return (
         <article className={style.tableWrapper}>
             <table className={style.tableContainer}>
@@ -85,9 +51,9 @@ export default function Table() {
                     </tr>
                 </thead>
                 <tbody>
-                    {tableData.map((row) => (
+                    {data.map((row) => (
                         <tr key={row.id}>
-                            <td className={`${style.deleteButton}`}>
+                            <td>
                                 <img src={bin} alt="Lixeira para exclusão"
                                     onClick={() => handleShowModalDelete(row.id)}
                                     aria-label={`Excluir ${row.name}`}
@@ -108,9 +74,9 @@ export default function Table() {
                             <td>{row.pep}</td>
                             <td>{row.currency}</td>
                             <td>{row.distance}</td>
-                            <td>{row.valueKm.toFixed(2)}</td>
-                            <td>{row.valueBilled.toFixed(2)}</td>
-                            <td>{row.expense.toFixed(2)}</td>
+                            <td>{row.valueKm}</td>
+                            <td>{row.valueBilled}</td>
+                            <td>{row.expense}</td>
                         </tr>
                     ))}
                 </tbody>

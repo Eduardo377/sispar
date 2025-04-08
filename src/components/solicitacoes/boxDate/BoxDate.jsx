@@ -3,33 +3,49 @@ import style from './boxDate.module.scss';
 import calendarIcon from '../../../assets/solicitacao/calendar-icon.png';
 import arrowDown from '../../../assets/solicitacao/arrowDown.png';
 
-export default function BoxDate() {
+export default function BoxDate({ formData, onInputChange, onSelectChange }) {
     return (
         <div className={`${style.boxDate}`}>
             <div className={`${style.boxDateInfos} ${style.box}`}>
-                <label htmlFor="date" name="date" >Data</label>
+                <label htmlFor="date" >Data</label>
                 <div className={`${style.boxTransparentInput} `}>
-                    <input type="date" name="date" className={`${style.transparentInput}${style.date}`} value="AAAA-MM-DD" min="1900-01-01" max="2300-12-31"
+                    <input
+                        type="date"
+                        name="date"
+                        className={`${style.transparentInput}${style.date}`}
+                        min="1900-01-01"
+                        max="2300-12-31"
+                        value={formData.date}
+                        onChange={onInputChange}
                     />
-                    <button type="button" className={`${style.transparentInputButton}`}>
-                        <img src={calendarIcon} alt="calendario" />
+                    <button
+                        type="button"
+                        className={style.transparentInputButton}
+                        aria-label="Abrir calendário"
+                        onClick={() => document.querySelector('input[name="date"]').showPicker()}
+                    >
+                        <img src={calendarIcon} alt="Ícone de calendário" />
                     </button>
+
                 </div>
             </div>
             <div className={`${style.boxDespesa}`}>
                 <div className={`${style.box}`}>
-                    <label htmlFor="despesa" name="despesa" >Tipo de Despesa</label>
+                    <label htmlFor="expenseType">Tipo de Despesa</label>
                     <div className={`${style.boxTransparentInput}`}>
                         <select
-                            htmlFor="despesa"
                             className={`${style.despesa} ${style.transparentInput}`}
+                            id="expenseType"
+                            name="expenseType"
+                            value={formData.expenseType}
+                            onChange={(e) => onSelectChange('expenseType', e.target.value)}
                         >
                             <option value="selecionar" className={`${style.despesa}`}
                             >Selecionar</option>
                             <option value="alimentacao" className={`${style.despesa}`}
                             >Alimentação</option>
-                            <option value="conbustivel" className={`${style.despesa}`}
-                            >Conbustível</option>
+                            <option value="combustivel" className={`${style.despesa}`}
+                            >Combustível</option>
                             <option value="conducao" className={`${style.despesa}`}
                             >Condução</option>
                             <option value="estacionamento" className={`${style.despesa}`}
@@ -52,8 +68,11 @@ export default function BoxDate() {
                     <label htmlFor="custos" name="custos" >Controle de Custo</label>
                     <div className={`${style.boxTransparentInput}`}>
                         <select
-                            htmlFor="custos"
                             className={`${style.custos}`}
+                            id="costControl"
+                            name="costControl"
+                            value={formData.costControl}
+                            onChange={(e) => onSelectChange('costControl', e.target.value)}
                         >
                             <option value="selecionar" className={`${style.custos}`}
                             >Selecionar</option>
