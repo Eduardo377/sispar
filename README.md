@@ -7,17 +7,16 @@ Bem-vindo à documentação oficial do **SISPAR**, um sistema de gestão de reem
 ## 📚 Índice
 
 1. [🧠 Visão Geral](#-visão-geral)
-2. [📂 Estrutura de Pastas](#-estrutura-de-pastas)
-3. [🧱 Componentes e Suas Funções](#-componentes-e-suas-funções)
-4. [⚙️ Lógica de Funcionamento](#️-lógica-de-funcionamento)
-5. [🎨 Estilização com SCSS Modules](#-estilização-com-scss-modules)
-6. [🧰 Bibliotecas Utilizadas](#-bibliotecas-utilizadas)
-7. [💾 Persistência com localStorage](#-persistência-com-localstorage)
-8. [✅ Boas Práticas Adotadas](#-boas-práticas-adotadas)
-9. [🖥️ Como Rodar o Projeto Localmente](#️-como-rodar-o-projeto-localmente)
-10. [🔧 Comandos de Instalação e Execução](#-comandos-de-instalação-e-execução)
-11. [🚀 Dicas Extras de Manutenção e Escalabilidade](#-dicas-extras-de-manutenção-e-escalabilidade)
-12. [📝 Licença](#-licença)
+2. [🧱 Componentes e Suas Funções](#-componentes-e-suas-funções)
+3. [⚙️ Lógica de Funcionamento](#️-lógica-de-funcionamento)
+4. [🎨 Estilização com SCSS Modules](#-estilização-com-scss-modules)
+5. [🧰 Bibliotecas Utilizadas](#-bibliotecas-utilizadas)
+6. [💾 Persistência com localStorage](#-persistência-com-localstorage)
+7. [✅ Boas Práticas Adotadas](#-boas-práticas-adotadas)
+8. [🖥️ Como Rodar o Projeto Localmente](#️-como-rodar-o-projeto-localmente)
+9. [🔧 Comandos de Instalação e Execução](#-comandos-de-instalação-e-execução)
+10. [📂 Estrutura de Pastas](#-estrutura-de-pastas)
+11. [📝 Licença](#-licença)
 
 ---
 
