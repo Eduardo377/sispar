@@ -21,7 +21,7 @@ export default function Values({ formData, onInputChange, onAddItem }) {
                 <input
                     id="ordInt"
                     name="ordInt"
-                    type="text"
+                    type="number"
                     value={formData.ordInt}
                     onChange={onInputChange}
                 />
@@ -31,7 +31,7 @@ export default function Values({ formData, onInputChange, onAddItem }) {
                 <input
                     id="pep"
                     name="pep"
-                    type="text"
+                    type="number"
                     value={formData.pep}
                     onChange={onInputChange}
                 />
@@ -41,7 +41,7 @@ export default function Values({ formData, onInputChange, onAddItem }) {
                 <input
                     id="div"
                     name="div"
-                    type="text"
+                    type="number"
                     value={formData.div}
                     onChange={onInputChange}
                 />
@@ -51,7 +51,7 @@ export default function Values({ formData, onInputChange, onAddItem }) {
                 <input
                     id="distance"
                     name="distance"
-                    type="text"
+                    type="number"
                     value={formData.distance}
                     onChange={onInputChange}
                 />
@@ -69,31 +69,31 @@ export default function Values({ formData, onInputChange, onAddItem }) {
             <div className={`${style.boxWidthMax}`}>
                 <label htmlFor="valuekm">Valor / Km</label>
                 <input
-                    id="valuekm"
-                    name="valuekm"
-                    type="text"
+                    id="valueKm"
+                    name="valueKm"
+                    type="number"
                     step=".01"
-                    value={formData.valuekm}
+                    value={formData.valueKm}
                     onChange={onInputChange}
                 />
             </div>
             <div className={`${style.boxWidthMax}`}>
-                <label htmlFor="taxa">Val. Taxa</label>
+                <label htmlFor="expense">Val. Taxa</label>
                 <input
                     id="expense"
                     name="expense"
-                    type="text"
+                    type="number"
                     step=".01"
                     value={formData.expense}
                     onChange={onInputChange}
                 />
             </div>
             <div className={`${style.boxWidthMax}`}>
-                <label htmlFor="faturado" >Val. Faturado</label>
+                <label htmlFor="valueBilled" >Val. Faturado</label>
                 <input
                     id="valueBilled"
                     name="valueBilled"
-                    type="text"
+                    type="number"
                     step=".01"
                     value={formData.valueBilled}
                     onChange={onInputChange}

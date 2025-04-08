@@ -1,0 +1,16 @@
+.containerFrom {
+    margin-left: 1%;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    height: auto;
+    max-width: 100%;
+
+    .containerRegistro {
+        width: 63%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

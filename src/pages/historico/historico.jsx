@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import style from './historico.module.scss';
 import Navbar from '../../components/navbar/Navbar.jsx';
-import vectorHomeIndice from '../../assets/Dashboard/vectorHomeIndice.png';
 import arrowRight from '../../assets/Dashboard/arrowRight.png';
+
+import Breadcrumb from '../../components/breadcrumb/Breadcrumb.jsx';
 
 export default function Historico() {
     return (
@@ -15,13 +15,11 @@ export default function Historico() {
 
             <main className={style.main}>
                 <section>
-                    <span>
-                        <img src={vectorHomeIndice} alt="casa pequena" />
-                        <img src={arrowRight} alt="seta pra direita" />
-                        <p>Reembolso</p>
-                        <img src={arrowRight} alt="seta pra direita" />
-                        <p>Histórico</p>
-                    </span>
+                <Breadcrumb
+                    title1={"Reembolsos"}
+                    image={arrowRight}
+                    title2={"Histórico"}
+                />
                 </section>
             </main>
         </div>
