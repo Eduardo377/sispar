@@ -28,9 +28,9 @@ export default function BoxInfos({ formData, onInputChange }) {
                 <div className={`${style.boxInputNPrestContas}`}>
                     <label htmlFor="nPrestContas">Nº Prest. Contas</label>
                     <input
-                        type="text"
+                        type="number"
                         name="account"
-                        id="nPrestContas"
+                        id="account"
                         value={formData.account}
                         onChange={onInputChange}
                     />

@@ -1,0 +1,47 @@
+.boxFinalAnalysis {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 97.3%;
+    height: 10%;
+    gap: 1%;
+    margin-left: 1%;
+    margin-top: 1.3%;
+
+    div {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 6%;
+        }
+        
+        input {
+            height: 5dvh;
+            padding: 5%;
+        }
+    }
+
+    button {
+        height: 5dvh;
+        width: 12%;
+        margin-top: 1.7%;
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--background);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+    }
+
+    .blueAnalise {
+        background-color: var(--tertiary-dark-blue);
+    }
+
+    .redDelete {
+        background-color: var(--primary-burgundy-red);
+    }
+}
