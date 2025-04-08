@@ -2,7 +2,7 @@ main {
     height: 100vh;
     display: flex;
 
-    #backgroundNavio {
+    .backgroundNavio {
         width: 65%;
         height: 100%;
         background-image: url(../../assets/Tela-Login/cargo-ship-ocean.png);
@@ -48,3 +48,4 @@ main {
         }
     }
 }
+

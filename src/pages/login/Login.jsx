@@ -9,7 +9,7 @@ export default function Login() {
 
     return (
         <main>
-            <section id={style['backgroundNavio']}>
+            <section id={style.backgroundNavio}>
             </section>
             <section className={style.sectionLogin}>
                 <article>
