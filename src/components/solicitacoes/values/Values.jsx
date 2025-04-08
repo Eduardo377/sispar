@@ -6,10 +6,10 @@ import Cancel from '../../../assets/Dashboard/arrowLeftCancel.png';
 
 import { Modal } from '../../modal/Modal.jsx';
 
-export default function Values() {
-    
+export default function Values({ formData, onInputChange, onAddItem }) {
+
     const [showModal, setShowModal] = useState(false);
-    
+
     const handleShowModalReset = () => setShowModal(true);
     const handleConfirm = () => setShowModal(false);
     const handleCancel = () => setShowModal(false);
@@ -18,46 +18,102 @@ export default function Values() {
         <article className={`${style.boxValues}`}>
             <div className={`${style.boxWidthMin}`}>
                 <label htmlFor="ordInt">Ord Int.</label>
-                <input id="ordInt" type="text" />
+                <input
+                    id="ordInt"
+                    name="ordInt"
+                    type="text"
+                    value={formData.ordInt}
+                    onChange={onInputChange}
+                />
             </div>
             <div className={`${style.boxWidthMin}`}>
                 <label htmlFor="pep">PEP</label>
-                <input id="pep" type="text" />
+                <input
+                    id="pep"
+                    name="pep"
+                    type="text"
+                    value={formData.pep}
+                    onChange={onInputChange}
+                />
             </div>
             <div className={`${style.boxWidthMin}`}>
                 <label htmlFor="div">Div.</label>
-                <input id="div" type="text" />
+                <input
+                    id="div"
+                    name="div"
+                    type="text"
+                    value={formData.div}
+                    onChange={onInputChange}
+                />
             </div>
             <div className={`${style.boxWidthMax}`}>
                 <label htmlFor="distancia">Dist. /Km</label>
-                <input id="distancia" type="text" />
+                <input
+                    id="distance"
+                    name="distance"
+                    type="text"
+                    value={formData.distance}
+                    onChange={onInputChange}
+                />
             </div>
             <div className={`${style.boxWidthMin}`}>
                 <label htmlFor="moeda">Moeda</label>
-                <input id="moeda" type="text" />
+                <input
+                    id="currency"
+                    name="currency"
+                    type="text"
+                    value={formData.currency}
+                    onChange={onInputChange}
+                />
             </div>
             <div className={`${style.boxWidthMax}`}>
-                <label htmlFor="valorKM">Valor / Km</label>
-                <input id="valorKM" type="number" step=".01" />
+                <label htmlFor="valuekm">Valor / Km</label>
+                <input
+                    id="valuekm"
+                    name="valuekm"
+                    type="text"
+                    step=".01"
+                    value={formData.valuekm}
+                    onChange={onInputChange}
+                />
             </div>
             <div className={`${style.boxWidthMax}`}>
                 <label htmlFor="taxa">Val. Taxa</label>
-                <input id="taxa" type="number" step=".01" />
+                <input
+                    id="expense"
+                    name="expense"
+                    type="text"
+                    step=".01"
+                    value={formData.expense}
+                    onChange={onInputChange}
+                />
             </div>
-            <div Main className={`${style.boxWidthMax}`}>
+            <div className={`${style.boxWidthMax}`}>
                 <label htmlFor="faturado" >Val. Faturado</label>
-                <input id="faturado" type="number" step=".01" />
+                <input
+                    id="valueBilled"
+                    name="valueBilled"
+                    type="text"
+                    step=".01"
+                    value={formData.valueBilled}
+                    onChange={onInputChange}
+                />
             </div>
             <div className={`${style.boxButton}`}>
-                <button className={`${style.buttonSalvar}`} >
-                    <img src={cruz} alt="" />
+                <button
+                    className={`${style.buttonSalvar}`}
+                    type="button"
+                    onClick={onAddItem}
+                >
+                    <img src={cruz} alt="Cruz pra salvar." />
                     Salvar
                 </button>
                 <button
-                    className={`${style.buttonCancelar}`}
+                    className={style.buttonCancelar}
                     onClick={handleShowModalReset}
+                    aria-label="Cancelar e limpar campos"
                 >
-                    <img src={Cancel} alt="" />
+                    <img src={Cancel} alt="Cancelar." />
                 </button>
                 {showModal && (
                     <Modal
