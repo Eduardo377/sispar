@@ -6,12 +6,11 @@ export default function Forms() {
     const navigate = useNavigate();
 
     const handleLogin = () => {
-
         navigate('/reembolsos');
     };
 
     const handleCriarConta = () => {
-        navigate('/criar-conta');
+        navigate('/criarlogin');
     };
 
     return (

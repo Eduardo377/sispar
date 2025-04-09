@@ -1,15 +1,12 @@
-// import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/Tela-Login/logo-ws.png'
 import style from './login.module.scss'
-
+import logo from '../../assets/Tela-Login/logo-ws.png'
 import Forms from '../../components/login/forms/Forms.jsx';
 
 export default function Login() {
 
     return (
         <main>
-            <section id={style.backgroundNavio}>
+            <section className={style.backgroundNavio}>
             </section>
             <section className={style.sectionLogin}>
                 <article>
