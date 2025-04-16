@@ -49,8 +49,6 @@ main {
     }
 }
 
-
-// 🔽 Responsividade para tablets
 @media (max-width: 1280px) {
 
     .backgroundNavio {
@@ -90,44 +88,3 @@ main {
         }
     }
 }
-
-
-// 🔽 Responsividade para celulares
-// @media (max-width: 768px) {
-//     .backgroundNavio {
-//         display: none;
-//     }
-
-//     .sectionLogin {
-//         min-width: 100%;
-//         height: 100vh;
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         justify-content: center;
-
-//         article {
-//             gap: 1rem;
-//             width: 100%;
-
-//             #containerTitle {
-//                 width: 100%;
-
-//                 h1 {
-//                     font-size: 1.5rem;
-//                     width: 100%;
-//                     white-space: wrap;
-//                 }
-
-//                 p {
-//                     font-size: 0.9rem;
-//                     width: 100%;
-//                 }
-//             }
-
-//             img {
-//                 height: auto;
-//             }
-//         }
-//     }
-// }

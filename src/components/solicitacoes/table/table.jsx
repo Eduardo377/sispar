@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import initialTableData from '../../../data/initialTableData.json';
 import style from './table.module.scss';
 import bin from '../../../assets/Dashboard/binVentor.png';
 import descriptionReason from '../../../assets/Dashboard/descriptionReasonVector.png';

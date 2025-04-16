@@ -30,7 +30,7 @@
 
                 img {
                     width: auto;
-                    margin-bottom: 1rem;
+                    margin-bottom: 4%;
                 }
 
                 h1 {
@@ -81,13 +81,9 @@
     }
 }
 
-// 🔽 Responsividade
-@media (max-width: 768px) {
-    .main {
-        padding: 1rem;
-    }
+@media (max-width: 1280px) {
 
-    .sectionForm {
-        padding: 1rem;
+    .backgroundNavio {
+        display: none;
     }
 }
