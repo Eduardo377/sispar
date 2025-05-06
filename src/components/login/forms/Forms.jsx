@@ -1,17 +1,32 @@
 import { useNavigate } from 'react-router-dom';
 import style from './forms.module.scss';
+import api from '../../../Services/Api.jsx';
+import { useState } from 'react';
 
 export default function Forms() {
 
     const navigate = useNavigate();
 
-    const handleLogin = () => {
-        navigate('/reembolsos');
-    };
-
     const handleCriarConta = () => {
         navigate('/criarlogin');
     };
+
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await api.post('colaborador/login', {
+                'email': email,
+                'senha': senha
+            });
+            console.log(response.data);
+            navigate('/reembolsos');
+        } catch (error) {
+            console.error('Erro ao fazer login:', error);
+        }
+    }
 
     return (
         <form>
@@ -22,6 +37,8 @@ export default function Forms() {
                 placeholder="Email"
                 required
                 aria-label="Insira seu email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
             />
             <input
                 type="password"
@@ -30,6 +47,8 @@ export default function Forms() {
                 placeholder="Senha"
                 required
                 aria-label="Insira sua senha"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
             />
             <a href="#" rel="noopener noreferrer">
                 Esqueci minha senha
