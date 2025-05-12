@@ -1,24 +1,33 @@
+/* eslint-disable no-undef */
 import { useState, useEffect, useCallback } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import initialTableData from '../data/initialTableData.json';
+// import initialTableData from '../data/initialTableData.json';
+import api from '../services/api';
 
 export function useSolicitacao() {
     const [showModal, setShowModal] = useState(false);
-    const [tableData, setTableData] = useState(initialTableData);
+    const [tableData, setTableData] = useState(
+        api.get('/reembolso/listar_reembolsos')
+            .then(response => {
+                response.data
+            })
+            .catch(() => {
+                console.log('Erro ao buscar reembolsos:');
+            }));
     const [formData, setFormData] = useState({
         name: '',
         company: '',
-        account: '',
+        installment_number: '',
         date: '',
-        expenseType: 'selecionar',
-        costControl: 'selecionar',
-        ordInt: '',
+        expense_type: 'selecionar',
+        cost_center: 'selecionar',
+        internal_order: '',
         div: '',
         pep: '',
         currency: '',
-        distance: '',
-        valueKm: '',
-        valueBilled: '',
+        distance_km: '',
+        value_km: '',
+        value_billed: '',
         expense: '',
         description: ''
     });
@@ -47,24 +56,24 @@ export function useSolicitacao() {
         setFormData({
             name: '',
             company: '',
-            account: '',
+            installment_number: '',
             date: '',
-            expenseType: 'selecionar',
-            costControl: 'selecionar',
-            ordInt: '',
+            expense_type: 'selecionar',
+            cost_center: 'selecionar',
+            internal_order: '',
             div: '',
             pep: '',
             currency: '',
-            distance: '',
-            valueKm: '',
-            valueBilled: '',
+            distance_km: '',
+            value_km: '',
+            value_billed: '',
             expense: '',
             description: ''
         });
     };
 
     const handleAddItem = () => {
-        if (!formData.name || !formData.valueBilled || formData.expenseType === 'selecionar') {
+        if (!formData.name || !formData.value_billed || formData.expense_type === 'selecionar') {
             alert('Preencha todos os campos obrigatórios!');
             return;
         }
@@ -72,8 +81,8 @@ export function useSolicitacao() {
         const newItem = {
             id: uuidv4(),
             ...formData,
-            valueKm: parseFloat(formData.valueKm || 0),
-            valueBilled: parseFloat(formData.valueBilled || 0),
+            value_km: parseFloat(formData.value_km || 0),
+            value_billed: parseFloat(formData.value_billed || 0),
             expense: parseFloat(formData.expense || 0)
         };
 
@@ -89,7 +98,7 @@ export function useSolicitacao() {
         localStorage.setItem('tableData', JSON.stringify(updatedData));
     };
 
-    const totalFaturado = tableData.reduce((total, item) => total + item.valueBilled, 0).toFixed(2);
+    const totalFaturado = tableData.reduce((total, item) => total + item.value_billed, 0).toFixed(2);
     const totalDespesa = tableData.reduce((total, item) => total + item.expense, 0).toFixed(2);
 
     return {

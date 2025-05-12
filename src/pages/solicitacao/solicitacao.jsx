@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import { Modal } from '../../components/modal/Modal.jsx';
 import Breadcrumb from '../../components/breadcrumb/Breadcrumb.jsx';

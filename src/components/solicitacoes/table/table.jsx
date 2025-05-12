@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import initialTableData from '../../../data/initialTableData.json';
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
 import style from './table.module.scss';
 import bin from '../../../assets/Dashboard/binVentor.png';
 import descriptionReason from '../../../assets/Dashboard/descriptionReasonVector.png';
@@ -62,20 +62,20 @@ export default function Table({ data, onDelete }) {
                             </td>
                             <td>{row.name}</td>
                             <td>{row.company}</td>
-                            <td>{row.account}</td>
+                            <td>{row.installment_number}</td>
                             <td>{row.date}</td>
                             <td>
                                 <img src={descriptionReason} alt="Descrição do motivo" />
                             </td>
-                            <td>{row.expenseType}</td>
-                            <td>{row.costControl}</td>
-                            <td>{row.ordInt}</td>
+                            <td>{row.expense_type}</td>
+                            <td>{row.cost_center}</td>
+                            <td>{row.internal_order}</td>
                             <td>{row.div}</td>
                             <td>{row.pep}</td>
                             <td>{row.currency}</td>
                             <td>{row.distance}</td>
-                            <td>{row.valueKm}</td>
-                            <td>{row.valueBilled}</td>
+                            <td>{row.value_km}</td>
+                            <td>{row.value_billed}</td>
                             <td>{row.expense}</td>
                         </tr>
                     ))}
