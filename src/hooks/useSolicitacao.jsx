@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import { useState, useEffect, useCallback } from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -10,6 +11,25 @@ export function useSolicitacao() {
         api.get('/reembolso/listar_reembolsos')
             .then(response => {
                 response.data
+                console.log('Reembolsos:', response.data);
+                const formattedData = response.data.map(item => ({
+                    id: item.id,
+                    name: item.name,
+                    company: item.company,
+                    installment_number: item.installment_number,
+                    date: item.date,
+                    expense_type: item.expense_type,
+                    cost_center: item.cost_center,
+                    internal_order: item.internal_order,
+                    div: item.div,
+                    pep: item.pep,
+                    currency: item.currency,
+                    distance_km: item.distance_km,
+                    value_km: parseFloat(item.value_km),
+                    value_billed: parseFloat(item.value_billed),
+                    expense: parseFloat(item.expense),
+                    description: item.description
+                }));
             })
             .catch(() => {
                 console.log('Erro ao buscar reembolsos:');
