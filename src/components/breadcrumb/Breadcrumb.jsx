@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import style from './breadcrumb.module.scss';
 import arrowRight from '../../assets/Dashboard/arrowRight.png';
 import vectorHomeIndice from '../../assets/Dashboard/vectorHomeIndice.png';
