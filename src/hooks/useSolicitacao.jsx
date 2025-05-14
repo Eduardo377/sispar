@@ -1,5 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
+<<<<<<< HEAD
 import api from '../Services/api.jsx';
+=======
+import api from '../services/api.jsx';
+>>>>>>> 775427e6556739da064060fc4ce746bb0971bd3e
 
 export function useSolicitacao() {
     const [showModal, setShowModal] = useState(false);
