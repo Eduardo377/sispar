@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 
 import style from './values.module.scss';
@@ -17,12 +18,12 @@ export default function Values({ formData, onInputChange, onAddItem }) {
     return (
         <article className={`${style.boxValues}`}>
             <div className={`${style.boxWidthMin}`}>
-                <label htmlFor="ordInt">Ord Int.</label>
+                <label htmlFor="internal_order">Ord Int.</label>
                 <input
-                    id="ordInt"
-                    name="ordInt"
-                    type="number"
-                    value={formData.ordInt}
+                    id="internal_order"
+                    name="internal_order"
+                    type="text"
+                    value={formData.internal_order}
                     onChange={onInputChange}
                 />
             </div>
@@ -31,7 +32,7 @@ export default function Values({ formData, onInputChange, onAddItem }) {
                 <input
                     id="pep"
                     name="pep"
-                    type="number"
+                    type="textr"
                     value={formData.pep}
                     onChange={onInputChange}
                 />
@@ -41,7 +42,7 @@ export default function Values({ formData, onInputChange, onAddItem }) {
                 <input
                     id="div"
                     name="div"
-                    type="number"
+                    type="text"
                     value={formData.div}
                     onChange={onInputChange}
                 />
@@ -49,10 +50,10 @@ export default function Values({ formData, onInputChange, onAddItem }) {
             <div className={`${style.boxWidthMax}`}>
                 <label htmlFor="distancia">Dist. /Km</label>
                 <input
-                    id="distance"
-                    name="distance"
-                    type="number"
-                    value={formData.distance}
+                    id="distance_km"
+                    name="distance_km"
+                    type="text"
+                    value={formData.distance_km}
                     onChange={onInputChange}
                 />
             </div>
@@ -67,13 +68,13 @@ export default function Values({ formData, onInputChange, onAddItem }) {
                 />
             </div>
             <div className={`${style.boxWidthMax}`}>
-                <label htmlFor="valuekm">Valor / Km</label>
+                <label htmlFor="value_km">Valor / Km</label>
                 <input
-                    id="valueKm"
-                    name="valueKm"
-                    type="number"
+                    id="value_km"
+                    name="value_km"
+                    type="text"
                     step=".01"
-                    value={formData.valueKm}
+                    value={formData.value_km}
                     onChange={onInputChange}
                 />
             </div>
@@ -89,13 +90,13 @@ export default function Values({ formData, onInputChange, onAddItem }) {
                 />
             </div>
             <div className={`${style.boxWidthMax}`}>
-                <label htmlFor="valueBilled" >Val. Faturado</label>
+                <label htmlFor="value_billed" >Val. Faturado</label>
                 <input
-                    id="valueBilled"
-                    name="valueBilled"
+                    id="value_billed"
+                    name="value_billed"
                     type="number"
                     step=".01"
-                    value={formData.valueBilled}
+                    value={formData.value_billed}
                     onChange={onInputChange}
                 />
             </div>

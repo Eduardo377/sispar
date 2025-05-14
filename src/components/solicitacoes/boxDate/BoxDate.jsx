@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import style from './boxDate.module.scss';
 
 import calendarIcon from '../../../assets/solicitacao/calendar-icon.png';
@@ -31,14 +32,14 @@ export default function BoxDate({ formData, onInputChange, onSelectChange }) {
             </div>
             <div className={`${style.boxDespesa}`}>
                 <div className={`${style.box}`}>
-                    <label htmlFor="expenseType">Tipo de Despesa</label>
+                    <label htmlFor="expense_type">Tipo de Despesa</label>
                     <div className={`${style.boxTransparentInput}`}>
                         <select
                             className={`${style.despesa} ${style.transparentInput}`}
-                            id="expenseType"
-                            name="expenseType"
-                            value={formData.expenseType}
-                            onChange={(e) => onSelectChange('expenseType', e.target.value)}
+                            id="expense_type"
+                            name="expense_type"
+                            value={formData.expense_type}
+                            onChange={(e) => onSelectChange('expense_type', e.target.value)}
                         >
                             <option value="Selecionar" className={`${style.despesa}`}
                             >Selecionar</option>
@@ -69,10 +70,10 @@ export default function BoxDate({ formData, onInputChange, onSelectChange }) {
                     <div className={`${style.boxTransparentInput}`}>
                         <select
                             className={`${style.custos}`}
-                            id="costControl"
-                            name="costControl"
-                            value={formData.costControl}
-                            onChange={(e) => onSelectChange('costControl', e.target.value)}
+                            id="cost_center"
+                            name="cost_center"
+                            value={formData.cost_center}
+                            onChange={(e) => onSelectChange('cost_center', e.target.value)}
                         >
                             <option value="selecionar" className={`${style.custos}`}
                             >Selecionar</option>

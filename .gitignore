@@ -22,3 +22,53 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,visualstudio,venv,dotenv,flask,python,database
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,visualstudio,venv,dotenv,flask,python,database
+
+### Database ###
+*.accdb
+*.db
+*.dbf
+*.mdb
+*.pdb
+*.sqlite3
+*.db-shm
+*.db-wal
+
+### dotenv ###
+.env
+
+### Flask ###
+instance/*
+!instance/.gitignore
+.webassets-cache
+
+### Flask.Python Stack ###
+# Byte-compiled / optimized / DLL files
+__pycache__
+__pyc…working folder
+.ionide/
+
+# Fody - auto-generated XML schema
+FodyWeavers.xsd
+
+# VS Code files for those working on multiple tools
+*.code-workspace
+
+# Local History for Visual Studio Code
+
+# Windows Installer files from build outputs
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# JetBrains Rider
+*.sln.iml
+log_execucao.txt
+
+### VisualStudio Patch ###
+# Additional files built by Visual Studio
+
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,visualstudio,venv,dotenv,flask,python,database

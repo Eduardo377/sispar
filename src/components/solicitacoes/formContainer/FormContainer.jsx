@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import BoxInfos from '../../../components/solicitacoes/boxInfos/BoxInfos.jsx';
 import BoxDate from '../../../components/solicitacoes/boxDate/BoxDate.jsx';
 import Values from '../../../components/solicitacoes/values/Values.jsx';
