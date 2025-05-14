@@ -1,34 +1,46 @@
 import { useState, useEffect, useCallback } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import initialTableData from '../data/initialTableData.json';
+import api from '../Services/api.jsx';
 
 export function useSolicitacao() {
     const [showModal, setShowModal] = useState(false);
-    const [tableData, setTableData] = useState(initialTableData);
+    const [tableData, setTableData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [formData, setFormData] = useState({
         name: '',
         company: '',
         account: '',
         date: '',
-        expenseType: 'selecionar',
+        expense_type: 'selecionar',
         costControl: 'selecionar',
         ordInt: '',
         div: '',
         pep: '',
         currency: '',
         distance: '',
-        valueKm: '',
-        valueBilled: '',
-        expense: '',
-        description: ''
+        value_km: '',
+        value_billed: '',
+        expense: ''
     });
 
-    useEffect(() => {
-        const savedData = localStorage.getItem('tableData');
-        if (savedData) {
-            setTableData(JSON.parse(savedData));
+    const fetchReembolsos = useCallback(async () => {
+        try {
+            setLoading(true);
+            const response = await api.get('/reembolso/listar_reembolsos');
+            setTableData(response.data);
+            setError(null);
+        } catch (error) {
+            console.error('Erro ao carregar dados:', error);
+            setError('Erro ao carregar dados do servidor.');
+            setTableData([]); // Limpa os dados em caso de erro
+        } finally {
+            setLoading(false);
         }
     }, []);
+
+    useEffect(() => {
+        fetchReembolsos();
+    }, [fetchReembolsos]);
 
     const handleShowModalCancel = () => setShowModal(true);
     const handleConfirm = () => setShowModal(false);
@@ -49,50 +61,67 @@ export function useSolicitacao() {
             company: '',
             account: '',
             date: '',
-            expenseType: 'selecionar',
+            expense_type: 'selecionar',
             costControl: 'selecionar',
             ordInt: '',
             div: '',
             pep: '',
             currency: '',
             distance: '',
-            valueKm: '',
-            valueBilled: '',
-            expense: '',
-            description: ''
+            value_km: '',
+            value_billed: '',
+            expense: ''
         });
     };
 
-    const handleAddItem = () => {
-        if (!formData.name || !formData.valueBilled || formData.expenseType === 'selecionar') {
+    const handleAddItem = async () => {
+        if (!formData.name || !formData.value_billed || formData.expense_type === 'selecionar') {
             alert('Preencha todos os campos obrigatórios!');
             return;
         }
 
-        const newItem = {
-            id: uuidv4(),
+        const newReembolso = {
             ...formData,
-            valueKm: parseFloat(formData.valueKm || 0),
-            valueBilled: parseFloat(formData.valueBilled || 0),
+            value_km: formData.value_km,
+            value_billed: parseFloat(formData.value_billed || 0),
             expense: parseFloat(formData.expense || 0)
         };
 
-        const updatedTable = [...tableData, newItem];
-        setTableData(updatedTable);
-        localStorage.setItem('tableData', JSON.stringify(updatedTable));
-        resetForm();
+        try {
+            // Usa a rota POST /reembolso/solicitar_reembolso do Swagger
+            await api.post('/reembolso/solicitar_reembolso', newReembolso);
+            await fetchReembolsos(); // Recarrega os dados
+            resetForm();
+        } catch (error) {
+            console.error('Erro ao solicitar reembolso:', error);
+            alert('Erro ao enviar solicitação de reembolso.');
+        }
     };
 
-    const handleDeleteRow = (id) => {
-        const updatedData = tableData.filter(item => item.id !== id);
-        setTableData(updatedData);
-        localStorage.setItem('tableData', JSON.stringify(updatedData));
+    const handleDeleteRow = async (id_reembolso) => {
+        try {
+            // Usa a rota DELETE /reembolso/deletar/{id_reembolso} do Swagger
+            await api.delete(`/reembolso/deletar/${id_reembolso}`);
+            await fetchReembolsos(); // Recarrega os dados
+        } catch (error) {
+            console.error('Erro ao deletar reembolso:', error);
+            alert('Erro ao deletar reembolso.');
+        }
     };
 
-    const totalFaturado = tableData.reduce((total, item) => total + item.valueBilled, 0).toFixed(2);
-    const totalDespesa = tableData.reduce((total, item) => total + item.expense, 0).toFixed(2);
+    const totalFaturado = tableData.reduce((total, item) => {
+        const value = Number(item.value_billed) || 0;
+        return total + value;
+    }, 0).toFixed(2);
+
+    const totalDespesa = tableData.reduce((total, item) => {
+        const value = Number(item.expense) || 0;
+        return total + value;
+    }, 0).toFixed(2);
 
     return {
+        loading,
+        error,
         showModal,
         tableData,
         formData,
