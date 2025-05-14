@@ -8,4 +8,9 @@ export default defineConfig({
     outDir: 'dist'
   },
   base: '/',
+  server: {
+    headers: {
+      'Content-Security-Policy': `script-src 'self' 'unsafe-inline' http://localhost:5173; font-src 'self' https://fonts.gstatic.com;`
+    }
+  }
 })

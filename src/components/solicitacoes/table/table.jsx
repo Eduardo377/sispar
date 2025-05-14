@@ -5,10 +5,13 @@ import bin from '../../../assets/Dashboard/binVentor.png';
 import descriptionReason from '../../../assets/Dashboard/descriptionReasonVector.png';
 import { Modal } from '../../modal/Modal.jsx';
 
-
-export default function Table({ data, onDelete }) {
+export default function Table({ data, onDelete, loading, handleDeleteRow }) {
     const [showModal, setShowModal] = useState(false);
     const [rowToDelete, setRowToDelete] = useState(null);
+
+    if (loading) {
+        return <div className={style.loading}>Carregando...</div>;
+    }
 
     const handleShowModalDelete = (id) => {
         setRowToDelete(id);
@@ -22,11 +25,11 @@ export default function Table({ data, onDelete }) {
     };
 
     const handleCancel = () => {
+        handleDeleteRow
         setShowModal(false);
         setRowToDelete(null);
     };
-    
-    console.log(data);
+
     return (
         <article className={style.tableWrapper}>
             <table className={style.tableContainer}>
@@ -54,10 +57,14 @@ export default function Table({ data, onDelete }) {
                     {data.map((row) => (
                         <tr key={row.id}>
                             <td>
-                                <img src={bin} alt="Lixeira para exclusão"
+                                <img
+                                    src={bin}
+                                    alt={`Excluir solicitação de ${row.name}`}
+                                    role="button"
+                                    tabIndex={0}
                                     onClick={() => handleShowModalDelete(row.id)}
-                                    aria-label={`Excluir ${row.name}`}
-                                    className={`${style.buttonDelete}`}
+                                    onKeyDown={(e) => e.key === 'Enter' && handleShowModalDelete(row.id)}
+                                    className={style.buttonDelete}
                                 />
                             </td>
                             <td>{row.name}</td>
