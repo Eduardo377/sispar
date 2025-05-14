@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import style from './boxInfos.module.scss';
 
 export default function BoxInfos({ formData, onInputChange }) {
@@ -6,7 +7,7 @@ export default function BoxInfos({ formData, onInputChange }) {
         <article className={`${style.boxInfos}`}>
             <div className={`${style.boxPrimeiraLinha}`}>
                 <div className={`${style.boxInputName}`}>
-                    <label htmlFor="name">Nome Completo</label>
+                    <label htmlFor="name">name Completo</label>
                     <input
                         type="text"
                         name="name"
@@ -29,9 +30,9 @@ export default function BoxInfos({ formData, onInputChange }) {
                     <label htmlFor="nPrestContas">Nº Prest. Contas</label>
                     <input
                         type="number"
-                        name="account"
-                        id="account"
-                        value={formData.account}
+                        name="installment_number"
+                        id="installment_number"
+                        value={formData.installment_number}
                         onChange={onInputChange}
                     />
                 </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './historico.module.scss';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import arrowRight from '../../assets/Dashboard/arrowRight.png';
