@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import style from './forms.module.scss';
-import api from '../../../Services/Api.jsx';
+import api from '../../../Services/api.jsx';
 import { useState } from 'react';
 
 export default function Forms() {
@@ -12,16 +12,17 @@ export default function Forms() {
     };
 
     const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
+    const [password, setpassword] = useState('');
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
             const response = await api.post('colaborador/login', {
                 'email': email,
-                'senha': senha
+                'password': password
             });
-            console.log(response.data);
+            const id_colaborador = Number(localStorage.getItem('id_colaborador'));
+            console.log('Login bem-sucedido:', id_colaborador);
             navigate('/reembolsos');
         } catch (error) {
             console.error('Erro ao fazer login:', error);
@@ -42,16 +43,16 @@ export default function Forms() {
             />
             <input
                 type="password"
-                name="senha"
-                id={style['senha']}
-                placeholder="Senha"
+                name="password"
+                id={style['password']}
+                placeholder="password"
                 required
-                aria-label="Insira sua senha"
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
+                aria-label="Insira sua password"
+                value={password}
+                onChange={(e) => setpassword(e.target.value)}
             />
             <a href="#" rel="noopener noreferrer">
-                Esqueci minha senha
+                Esqueci minha password
             </a>
             <div id={style["buttonContainer"]}>
                 <button type='button' id={style['entrar']} onClick={handleLogin}>

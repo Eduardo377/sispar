@@ -74,6 +74,8 @@ export function useSolicitacao() {
         });
     };
 
+    const id_login = localStorage.getItem(Number('id_login'));
+
     const handleAddItem = async () => {
         if (!formData.name || !formData.value_billed || formData.expense_type === 'selecionar') {
             alert('Preencha todos os campos obrigatórios!');
@@ -81,12 +83,14 @@ export function useSolicitacao() {
         }
 
         const newReembolso = {
+            id_login,
             ...formData,
             value_km: formData.value_km,
             value_billed: parseFloat(formData.value_billed || 0),
             expense: parseFloat(formData.expense || 0)
         };
-
+        
+        console.log('Novo reembolso:', newReembolso);
         try {
             // Usa a rota POST /reembolso/solicitar_reembolso do Swagger
             await api.post('/reembolso/solicitar_reembolso', newReembolso);
